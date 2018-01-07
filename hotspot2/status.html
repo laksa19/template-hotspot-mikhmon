@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>Kemangi 41 > status</title>
+$(if refresh-timeout)
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+    function readablizeBytes(bytes) {
+		var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
+		var e = Math.floor(Math.log(bytes)/Math.log(1024));
+		return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+		}
+//-->
+</script>
+</head>
+<body align="center"
+$(if advert-pending == 'yes')
+	onLoad="openAdvert()"
+$(endif)
+>
+<div class="main"
+<table width="100%" height="300px">
+
+<tr>
+<td align="center" valign="middle">
+<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+<table class="tstatus" align="center">
+$(if login-by == 'trial')
+	<br><b><div style="text-align: center;">Selamat datang !</div></b><br>
+$(elif login-by != 'mac')
+	<br><b><div style="text-align: center;">Selamat datang $(username)</div></b><br>
+$(endif)
+	<tr><td align="right">IP :</td><td>$(ip)</td></tr>
+	<tr><td align="right">UL | DL :</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
+	<tr><td align="right">Aktif :</td><td>$(uptime)</td></tr>
+$(if remain-bytes-out)
+	<tr><td align="right">Sisa Kuota :</td><td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-out)));</script></td></tr>
+$(endif)
+$(if session-time-left)
+	<tr><td align="right">Sisa Waktu :</td><td>$(session-time-left)</td></tr>
+$(endif)
+$(if blocked == 'yes')
+	<tr><td align="right">Status :</td><td><div style="color: #FF8080">
+<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+$(elif refresh-timeout)
+	<tr><td align="right">Refresh :</td><td>$(refresh-timeout)</td>
+$(endif)
+<!--<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center; color:red;">Mohon Maaf Internet Telkom Sedang Gangguan!</div><br>-->
+<b><div class?"notice" style="font-size: 14px; text-align:center;">Masa Aktif Voucher  <a href="http://kemangi41.net/fiandla/status">Klik Disini</a></div></b><br>
+</table>
+$(if login-by-mac != 'yes')
+<br>
+<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+<!-- end of user manager link -->
+<center><input type="submit" class="button" value=" Logout "></center>
+$(endif)
+</tr>
+</form>
+</td>
+</table>
+</div>
+</body>
+</html>

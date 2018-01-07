@@ -1,0 +1,146 @@
+
+body {
+  color: #0000; 
+  background: url('img/textures.png'); 
+  background-color: #3D4241; 
+  font-size: 14px; 
+  font-family: verdana;
+}
+
+.main {
+  background-color: #FFFFFF;
+  color: black;
+  margin-top: 10px;
+  border: 1px solid #3D4241;
+  border-radius: 5px;
+  width:300px;
+  margin-left:auto; 
+  margin-right:auto;
+  height: 100%px;
+}
+.content {
+  background-color: #FFFFFF;
+  color: black;
+  margin-top: 10px;
+  border: 1px solid #3D4241;
+  border-radius: 5px;
+  width:300px;
+  margin-left:auto; 
+  margin-right:auto;
+  height: 100%;
+}
+
+textarea,input,select {
+  background-color: #FDFBFB;
+  border: 1px solid #008CCA;
+  margin: 1px;
+  text-align:center;
+  font-size: 16px;
+  color: #808080;
+  outline: none;
+  width: 230px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: #008CCA;
+  border: 1px solid #008CCA;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 1px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Style the tab */
+div.tab {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  width: 90%;
+  margin-left:auto; 
+  margin-right:auto;
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 6px 6px;
+  transition: 0.3s;
+  font-size: 14px;
+  width:50%;
+}
+
+div.tab button:hover {
+  background-color: #ddd;
+}
+
+div.tab button.active {
+  background-color: #008CCA;
+  color: #FFFFFF
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 10px;
+  border-top: none;
+}
+
+table.tlogin {
+  width: 95%;
+  height: 100px;
+  border-radius: 5px;
+  background: #f1f1f1;
+}
+
+table.tstatus {
+  width: 95%;
+  height: 100px;
+  border-radius: 5px;
+  background: #f1f1f1;
+  color: black;
+}
+
+table.tstatus td {
+  padding: 10px;
+}
+
+table.tpaketwifi {
+  border-collapse: collapse;
+}
+
+table.tpaketwifi td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+table.tpaketwifi tr:first-child{
+  background:#008CCA;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+table.tpaketwifi tr:nth-child(even){
+  background-color: #f1f1f1
+}
+
+a:link {
+  color: #008CCA;
+}
+a:visited {
+  color: #008CCA;
+}
+a:hover {
+  color: #008CCA;
+}
+a:active {
+  color: #008CCA;
+}
