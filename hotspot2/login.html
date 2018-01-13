@@ -9,13 +9,13 @@
 <meta http-equiv="expires" content="-1" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
 <link rel="stylesheet" type="text/css" href="style.css">
-<script src="/d3.v3.min.js"></script>
+<script src="d3.v3.min.js"></script>
 </head>
 
 <body>
 <table width="100%" style="margin-top: 10px;">
 	<tr>
-		<td align="center"><img src="/img/logo.png" alt="kemangi 41" style="border-radius: 5px" alt="sponsor" height="100%" width="200"/></td>
+		<td align="center"><img src="img/logo.png" alt="kemangi 41" style="border-radius: 5px" alt="sponsor" height="100%" width="200"/></td>
 	</tr>
 		<td><div style="color: white; font-size: 14px; text-align: center;">Langganan WiFi Hub: WA 0822</div></td>
 	</tr>
@@ -24,11 +24,11 @@
 <table align="center">
 	<tr>
 		<td>
-			<!--<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center; color:red;">Mohon Maaf Internet Telkom Sedang Gangguan!</div>-->
+			<!--<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center; color:red;">Mohon maaf Kemangi 41 dalam prbaikan, jadi koneksi kadang terputus.</div>-->
 			<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center;">Voucher wifi Kemangi 41 bisa didapatkan di</div>
 			<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center;">Gang Kemangi rumah No. 41</div>
 			<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center;">Gang Kluweh rumah No. 19 (Rosi)</div><br/>
-			<div class?"notice" style="font-size: 14px; text-align:center;">Masa Aktif Voucher  <a href="http://kemangi41.net/status">Klik Disini</a></div><br />
+			<div class?"notice" style="font-size: 14px; text-align:center;">Masa Aktif Voucher  <a href="./detail.html">Klik Disini</a></div><br />
 		</td>
 	</tr>
 </table>
@@ -79,7 +79,7 @@ $(endif)
 						<tr>
 							<td colspan=2><input  name="usernamekv" type="text" placeholder="Kode Voucher" value="$(username)"/></td>
 						</tr>
-						<td colspan=2 align="center";><input type="submit" class="button" value=" Login " /></td>
+						<td colspan=2 align="center";><input type="submit" class="button" value=" Login | Masuk" /></td>
 					</tr>
 					$(if error)<br /><div style="color: red; font-size: 14px">kode voucher tidak sesuai atau sudah dipakai!</div>$(endif)
 					</table>
@@ -165,7 +165,7 @@ document.getElementById("defaultOpen").click();
 </script>
 <div class="content">
 	<table id="paketwifi" align="center" class="tpaketwifi">
-		<div style="padding-top: 10px; padding-bottom:5px; font-size: 14px; font-weight: bold; text-align: center;">Daftar Paket Wifi Kemangi 41</div>
+		<div style="padding-top: 10px; padding-bottom:5px; font-size: 14px; font-weight: bold; text-align: center;">Daftar Paket Wifi</div>
 	</table>
 	<br>
 </div>
