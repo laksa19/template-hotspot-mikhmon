@@ -1,9 +1,9 @@
 
 body {
-  color: #0000; 
-  background: url('img/textures.png'); 
-  background-color: #3D4241; 
-  font-size: 14px; 
+  color: #0000;
+  background: url('img/textures.png');
+  background-color: #3D4241;
+  font-size: 14px;
   font-family: verdana;
 }
 
@@ -13,10 +13,9 @@ body {
   margin-top: 10px;
   border: 1px solid #3D4241;
   border-radius: 5px;
-  width:300px;
-  margin-left:auto; 
+  width:400px;
+  margin-left:auto;
   margin-right:auto;
-  height: 100%px;
 }
 .content {
   background-color: #FFFFFF;
@@ -24,8 +23,8 @@ body {
   margin-top: 10px;
   border: 1px solid #3D4241;
   border-radius: 5px;
-  width:300px;
-  margin-left:auto; 
+  width:400px;
+  margin-left:auto;
   margin-right:auto;
   height: 100%;
 }
@@ -61,7 +60,7 @@ div.tab {
   overflow: hidden;
   background-color: #f1f1f1;
   width: 90%;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
   height: 100%;
   border-radius: 5px;
@@ -143,4 +142,18 @@ a:hover {
 }
 a:active {
   color: #008CCA;
+}
+
+/*  layar 700px kebawah */
+@media screen and (max-width: 780px) {
+	
+	.main{
+		width: auto;
+		float: none;
+	}
+	.content{
+		width: auto;
+		float: none;
+	}
+
 }
