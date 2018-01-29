@@ -52,20 +52,20 @@ $(if login-by == 'trial')
 $(elif login-by != 'mac')
 	<br><b><div style="text-align: center;">Selamat datang $(username)</div></b><br>
 $(endif)
-	<tr><td align="right">IP :</td><td>$(ip)</td></tr>
-	<tr><td align="right">UL | DL :</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
-	<tr><td align="right">Aktif :</td><td>$(uptime)</td></tr>
+	<tr><td align="right">IP</td><td>:</td><td>$(ip)</td></tr>
+	<tr><td align="right">UL | DL</td><td>:</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
+	<tr><td align="right">Aktif</td><td>:</td><td>$(uptime)</td></tr>
 $(if remain-bytes-out)
-	<tr><td align="right">Sisa Kuota :</td><td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-out)));</script></td></tr>
+	<tr><td align="right">Sisa Kuota</td><td>:</td><td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-out)));</script></td></tr>
 $(endif)
 $(if session-time-left)
-	<tr><td align="right">Sisa Waktu :</td><td>$(session-time-left)</td></tr>
+	<tr><td align="right">Sisa Waktu</td><td>:</td><td>$(session-time-left)</td></tr>
 $(endif)
 $(if blocked == 'yes')
-	<tr><td align="right">Status :</td><td><div style="color: #FF8080">
+	<tr><td align="right">Status</td><td>:</td><td><div style="color: #FF8080">
 <a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
 $(elif refresh-timeout)
-	<tr><td align="right">Refresh :</td><td>$(refresh-timeout)</td>
+	<tr><td align="right">Refresh</td><td>:</td><td>$(refresh-timeout)</td>
 $(endif)
 <!--<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center; color:red;">Mohon Maaf Internet Telkom Sedang Gangguan!</div><br>-->
 <b><div class?"notice" style="font-size: 14px; text-align:center;">Masa Aktif Voucher  <a href="./detail.html">Klik Disini</a></div></b><br>

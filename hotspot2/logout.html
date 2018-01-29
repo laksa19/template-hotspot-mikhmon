@@ -28,14 +28,14 @@
 <br>
 <b>Anda telah logout</b> <br><br>
 <table class="tstatus" align="center">
-<tr><td align="right">User :</td><td>$(username)</td></tr>
-<tr><td align="right">IP Address :</td><td>$(ip)</td></tr>
-<tr><td align="right">MAC :</td><td>$(mac)</td></tr>
-<tr><td align="right">UL | DL :</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
-<tr><td align="right">Aktif :</td><td>$(uptime)</td></tr>
+<tr><td align="right">User</td><td>:</td><td>$(username)</td></tr>
+<tr><td align="right">IP Address</td><td>:</td><td>$(ip)</td></tr>
+<tr><td align="right">MAC</td><td>:</td><td>$(mac)</td></tr>
+<tr><td align="right">UL | DL</td><td>:</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
+<tr><td align="right">Aktif</td><td>:</td><td>$(uptime)</td></tr>
 $(if session-time-left)
-<tr><td align="right">Sisa Kuota :</td><td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-out)));</script></td></tr>
-<tr><td align="right">Sisa Waktu :</td><td>$(session-time-left)</td></tr>
+<tr><td align="right">Sisa Kuota</td><td>:</td><td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-out)));</script></td></tr>
+<tr><td align="right">Sisa Waktu</td><td>:</td><td>$(session-time-left)</td></tr>
 $(endif)
 </table>
 <br>
