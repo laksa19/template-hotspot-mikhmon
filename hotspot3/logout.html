@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="title"></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" >
+      function load() {
+        var mydata = JSON.parse(data);
+        var title = document.getElementById('title');
+          title.innerHTML = title.innerHTML +  mydata[0].nama ;
+        }
+</script>
+</head>
+
+<body align="center" onLoad="load()">
+<script language="JavaScript">
+<!--
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+    function readablizeBytes(bytes) {
+		var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
+		var e = Math.floor(Math.log(bytes)/Math.log(1024));
+		return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+		}
+//-->
+</script>
+<div class="status">
+<br>
+<b>Anda telah logout</b> <br><br>
+<center>
+  <table class="tstatus" align="center">
+    <tr><td align="right">User</td><td>$(username)</td></tr>
+    <tr><td align="right">IP Address</td><td>$(ip)</td></tr>
+    <tr><td align="right">MAC</td><td>$(mac)</td></tr>
+    <tr><td align="right">UL | DL</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
+    <tr><td align="right">Aktif</td><td>$(uptime)</td></tr>
+    $(if session-time-left)
+    <tr><td align="right">Sisa Kuota</td><td>
+      <script language="JavaScript">document.write(readablizeBytes($(remain-bytes-out)));</script>
+    </td></tr>
+    <tr><td align="right">Sisa Waktu</td><td>$(session-time-left)</td></tr>
+    $(endif)
+  </table>
+  <br>
+    <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+      <input type="submit" class="button" value=" Login kembali ">
+    </form>
+  <br>
+</center>
+</div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title id="title"></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="d3.v3.min.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" >
+      function load() {
+        var mydata = JSON.parse(data);
+        var title = document.getElementById('title');
+          title.innerHTML = title.innerHTML +  mydata[0].nama ;
+        var h3 = document.getElementById('nama');
+          h3.innerHTML = h3.innerHTML +  mydata[0].nama ;
+        var p = document.getElementById('keterangan');
+          p.innerHTML = p.innerHTML +  mydata[1].keterangan ;
+        var p = document.getElementById('voucher');
+          p.innerHTML = p.innerHTML +  mydata[2].voucher ;
+        var p = document.getElementById('alamat');
+          p.innerHTML = p.innerHTML +  mydata[3].alamat ;
+        var p = document.getElementById('phone');
+          p.innerHTML = p.innerHTML +  mydata[4].phone ;
+        var p = document.getElementById('sponsor');
+          p.innerHTML = p.innerHTML +  mydata[5].sponsor ;
+        var i = document.getElementById('copyright');
+          i.innerHTML = i.innerHTML +  mydata[6].copyright ;
+        var a = document.getElementById('cek');
+          a.innerHTML = a.innerHTML +  mydata[7].masaaktif ;
+        var div = document.getElementById('notifikasi');
+          div.innerHTML = div.innerHTML +  mydata[8].notifikasi ;
+        }
+</script>
+</head>
+<body onload="load()">
+	
+<div class="container">
+	
+	<div class="header">
+		<img src="img/logo.png" alt="kemangi 41" style="border-radius: 5px" height="100%" width="200"/><br>
+	</div> <!-- .header -->
+  <div class="notif" id="notifikasi">
+
+  </div> <!-- .notif-->
+	<div class="main">
+		
+		<div class="left">
+		  <h3>Silahkan Login</h3>
+		  <div class="tab">
+		    <button class="tablinks" onclick="openLogin(event, 'KV')" id="defaultOpen">Kode Voucher</button>
+	      <button class="tablinks" onclick="openLogin(event, 'UP')">User Password</button>
+	    </div>
+	    
+<!-- Login 1 kolom-->
+      <div id="KV" class="tabcontent">
+        $(if chap-id)
+        <form name="sendinkv" action="$(link-login-only)" method="post">
+          <input type="hidden" name="username" />
+          <input type="hidden" name="password" />
+          <input type="hidden" name="dst" value="$(link-orig)" />
+          <input type="hidden" name="popup" value="true" />
+        </form>
+        <script type="text/javascript" src="/md5.js"></script>
+        <script type="text/javascript">
+          function doLoginkv() {
+            document.sendinkv.username.value = document.loginkv.usernamekv.value;
+            document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.usernamekv.value + '$(chap-challenge)');
+            document.sendinkv.submit();
+            return false;
+          }
+        </script>
+        $(endif)
+        <div>
+          <center>
+          <p style="font-size: 14px; padding-top:10px">Login Kode Voucher<br>$(if trial == 'yes')Coba gratis, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik disini</a>.$(endif)</p>
+          <br>
+          <form autocomplete="off" name="loginkv" action="$(link-login-only)" method="post"
+          $(if chap-id) onSubmit="return doLoginkv()" $(endif)>
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+            <input  name="usernamekv" type="text" placeholder="Kode Voucher" value="$(username)"/>
+            <input type="submit" class="button" value=" Login " />
+            $(if error)<br>
+              <center><div style="color: red; font-size: 14px">kode voucher tidak sesuai atau sudah dipakai!</div></center>
+            $(endif)
+            </form>
+            </center>
+        </div>
+      </div>
+        
+<!-- Login 2 kolom -->
+      <div id="UP" class="tabcontent">
+        $(if chap-id)
+        <form name="sendinup" action="$(link-login-only)" method="post">
+          <input type="hidden" name="username" />
+          <input type="hidden" name="password" />
+          <input type="hidden" name="dst" value="$(link-orig)" />
+          <input type="hidden" name="popup" value="true" />
+        </form>
+        <script type="text/javascript" src="/md5.js"></script>
+        <script type="text/javascript">
+          function doLoginup() {
+            document.sendinup.username.value = document.loginup.usernameup.value;
+            document.sendinup.password.value = hexMD5('$(chap-id)' + document.loginup.passwordup.value + '$(chap-challenge)');
+            document.sendinup.submit();
+            return false;
+          }
+        </script>
+        $(endif)
+        <div>
+          <center>
+          <p style="font-size: 14px; padding-top:10px">Login Username & Password<br>$(if trial == 'yes')Coba gratis, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik disini</a>.$(endif)</p>
+          <br>
+            <form autocomplete="off" name="loginup" action="$(link-login-only)" method="post"
+            $(if chap-id) onSubmit="return doLoginup()" $(endif)>
+              <input type="hidden" name="dst" value="$(link-orig)" />
+              <input type="hidden" name="popup" value="true" />
+              <input  name="usernameup" type="text" placeholder="Username" value="$(username)"/>
+              <input  name="passwordup" type="password" placeholder="Password"/>
+              <input type="submit" class="button" value=" Login " />
+            $(if error)<br>
+              <center><div style="color: red; font-size: 14px">$(error)</div></center>
+            $(endif)
+            </form>
+            </center>
+        </div>
+      </div>
+<script>
+function openLogin(evt, loginName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(loginName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+      <br>
+      <div style="font-size: 14px; text-align:center; font-weight:bold;"><a id="cek" href="./detail.html"></a></div><br>
+		</div> <!-- .header -->
+
+		<div class="middle">
+			<h3 id="nama"></h3>
+			<p id="keterangan"></p>
+			<h3>Voucher</h3>
+			<p id="voucher"></p>
+			<h3> Daftar Paket Wifi</h3>
+		  <center>
+			<table id="paketwifi" align="center" class="tpaketwifi"></table>
+			</center>
+			<script type="text/javascript" charset="utf-8">
+            d3.text("paket-wifi.csv", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+
+                var container = d3.select("table.tpaketwifi")
+                    .append("div")
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+      </script>
+		</div> <!-- .middle -->
+
+		<div class="right">
+		  <h3>Alamat</h3>
+		  <p id="alamat"></p>
+		  <h3>Kontak</h3>
+		  <p id="phone"></p>
+		  <h3>Sponsor</h3>
+		  <p id="sponsor"></p>
+		  <img src="img/sponsor.png" alt="sponsor" height="100%" width="100%">
+		  
+		</div> <!-- .right -->
+
+	</div> <!-- .container -->
+
+	<div class="footer">
+	  <i>Copyright &copy; <i id="copyright"></i></i><br>
+	  <i>Powered by <a href="https://laksa19.github.io">Mikhmon</a></i>
+	</div> <!-- .footer -->
+ 
+</div>
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+</body>
+</html>

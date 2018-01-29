@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="title"></title>
+$(if refresh-timeout)
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" >
+      function load() {
+        var mydata = JSON.parse(data);
+        var title = document.getElementById('title');
+          title.innerHTML = title.innerHTML +  mydata[0].nama ;
+        var a = document.getElementById('cek');
+          a.innerHTML = a.innerHTML +  mydata[7].masaaktif ;
+        var div = document.getElementById('notifikasi');
+          div.innerHTML = div.innerHTML +  mydata[8].notifikasi ;
+        }
+</script>
+<script language="JavaScript">
+
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+    function readablizeBytes(bytes) {
+		var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
+		var e = Math.floor(Math.log(bytes)/Math.log(1024));
+		return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+		}
+
+</script>
+</head>
+  <body align="center"	onLoad="load()">
+    <div class="status">
+      $(if login-by == 'trial')
+	      <div style="text-align: center; font-weight:bold;">Selamat datang !</div><br>
+      $(elif login-by != 'mac')
+	    <br><div style="text-align: center;font-weight:bold;">Selamat datang $(username)</div><br>
+      $(endif)
+      
+    <div class="notif" id="notifikasi"></div>
+    <div style="font-size: 14px; text-align:center; font-weight:bold;"><a id="cek" href="./detail.html"></a></div><br>
+    
+    <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+    <center>
+      <table class="tstatus">
+        <tr><td align="right">IP</td><td>$(ip)</td></tr>
+        <tr><td align="right">UL | DL</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
+        <tr><td align="right">Aktif</td><td>$(uptime)</td></tr>
+        $(if remain-bytes-out)
+        <tr><td align="right">Sisa Kuota</td><td>
+          <script language="JavaScript">document.write(readablizeBytes($(remain-bytes-out)));</script>
+        </td></tr>
+        $(endif)
+        $(if session-time-left)
+        <tr><td align="right">Sisa Waktu</td><td>$(session-time-left)</td></tr>
+        $(endif)
+        $(if blocked == 'yes')
+        <tr><td align="right">Status</td><td><div style="color: #FF8080">
+          <a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+        $(elif refresh-timeout)
+        <tr><td align="right">Refresh</td><td>$(refresh-timeout)</td>
+        $(endif)
+        </table>
+        $(if login-by-mac != 'yes')
+        <br>
+        <input type="submit" class="button" value=" Logout | Keluar ">
+        $(endif)
+      </center>
+    </form>
+    <br>
+    </div>
+  </body>
+</html>
