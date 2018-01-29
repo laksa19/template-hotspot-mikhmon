@@ -1,13 +1,13 @@
-# hotspot-mkhmon
+# template hotspot-mkhmon
 Template login hotspot Mikrotik, cocok dipasangkan dengan Mikhmon
 ## Yang perlu disesuaikan
 ### hotspot2
 1. Daftar paket wifi disesuaikan di file (paket-wifi.csv) dengan text-editor.
-2. Logo dapat diganti dengan format (logo.png) ditaruh di folder img.
+2. Logo dapat diganti dengan format (logo.png dan sponsor.png) ditaruh di folder img.
 3. Sesuaikan juga yang dirasa perluu disesuaikan (nama usaha alamat dll).
 ### hotspot3
 1. Daftar paket wifi disesuaikan di file (paket-wifi.csv) dengan text-editor.
-2. Logo dapat diganti dengan format (logo.png) ditaruh di folder img.
+2. Logo dapat diganti dengan format (logo.png dan sponsor.png) ditaruh di folder img.
 3. Nama usaha, alamat dan lainnya di (data.js).
 
       Contoh : 
