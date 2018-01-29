@@ -9,7 +9,9 @@ Template login hotspot Mikrotik, cocok dipasangkan dengan Mikhmon
 1. Daftar paket wifi disesuaikan di file (paket-wifi.csv) dengan text-editor.
 2. Logo dapat diganti dengan format (logo.png) ditaruh di folder img.
 3. Nama usaha, alamat dan lainnya di (data.js).
-      - Contoh : {"nama" : "Kemangi 41"}
-      - Menjadi : {"nama" : "Hotspot Murah"}
+
+      Contoh : 
+      - {"nama" : "Kemangi 41"} menjadi {"nama" : "Hotspot Murah"}
+      - {"notifikasi" : "Mohon maaf internet Telkom dalam perbaikan."} menjadi {"notifikasi" : ""}
 
 
