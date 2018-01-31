@@ -118,8 +118,10 @@ a:hover{
   border: 1px solid #3D4241;
   border-radius: 5px;
   width:400px;
-  margin-left:auto;
-  margin-right:auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 textarea,input,select {
