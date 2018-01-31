@@ -55,53 +55,53 @@ a:hover{
 }
 
 /* Main */
-	.left{
-		width: 250px;
-		border: 1px solid #eee;
-		background: #e5e5e5;
-		padding: 10px;
-		margin: 5px;
-		float: left;
+.left{
+  width: 250px;
+  border: 1px solid #eee;
+  background: #e5e5e5;
+  padding: 10px;
+  margin: 5px;
+  float: left;
 	}
 
-	.middle{
-		width: 300px;
-		border: 1px solid #eee;
-		padding: 10px;
-		margin: 5px;
-		float: left;
+.middle{
+  width: 300px;
+  border: 1px solid #eee;
+  padding: 10px;
+  margin: 5px;
+  float: left;
 	}
-		.middle img{
-			max-width: 100%;
-			height: auto;
-		}
+	.middle img{
+  	max-width: 100%;
+  	height: auto;
+  }
 
-		.middle a{
-			font-weight: bold;
-		}
+	.middle a{
+  	font-weight: bold;
+  }
 
-	.right{
-		width: 240px;
-		border: 1px solid #eee;
-		padding: 10px;
-		margin: 5px;
-		float: left;
+.right{
+  width: 240px;
+  border: 1px solid #eee;
+  padding: 10px;
+  margin: 5px;
+  float: left;
 	}
 
-	.right {
-		list-style-type: none;
+.right {
+  list-style-type: none;
 	}
-	.right li{
-		display: block;
+.right li{
+  display: block;
 	}
-	.right li a{
-		display: block;
-		border-bottom: 1px solid #eee;
-		margin-bottom: 10px;
-		padding: 10px 5px;
+.right li a{
+  display: block;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  padding: 10px 5px;
 	}
-	.right ul li a:hover{
-		color: orange;
+.right ul li a:hover{
+  color: orange;
 	}
 
 .footer{
@@ -222,23 +222,23 @@ table.tpaketwifi tr:nth-child(even){
 /* layar 850px kebawah */
 @media screen and (max-width: 850px) {
 	
-	.container {
-		width: 90%;
+.container {
+  width: 90%;
 	}
-	.left {
-		width: 40%;
-		background: #e5e5e5;
+.left {
+  width: 40%;
+  background: #e5e5e5;
 	}
-	.middle {
-		width: 50%;
-		float: right;
+.middle {
+  width: 50%;
+  float: right;
 	}
 	
-	.right {
-		clear: both;
-		padding: 1% 4%;
-		width: auto;
-		float: none;
+.right {
+  clear: both;
+  padding: 1% 4%;
+  width: auto;
+  float: none;
 	}
 }
 
@@ -246,31 +246,31 @@ table.tpaketwifi tr:nth-child(even){
 /*  layar 600px kebawah */
 @media screen and (max-width: 600px) {
 	
-	.container {
-		width: 90%;
+.container {
+  width: 90%;
 	}
-	.header,
-	.footer{
-		text-align: center;
+.header,
+.footer{
+  text-align: center;
 	}
-	.left {
-		width: auto;
-		float: none;
-	}
-	
-	.middle {
-		width: auto;
-		float: none;
+.left {
+  width: auto;
+  float: none;
 	}
 	
-	.right {
-		width: auto;
-		float: none;
+.middle {
+  width: auto;
+  float: none;
 	}
 	
-	.status {
-		width: 90%;
-		float: none;
+.right {
+  width: auto;
+  float: none;
+	}
+	
+.status {
+  width: 90%;
+  float: none;
 	}
 
 }
