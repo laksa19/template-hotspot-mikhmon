@@ -1,5 +1,7 @@
 # template-hotspot-mkhmon
 Template login hotspot Mikrotik, cocok dipasangkan dengan Mikhmon
+## Lisensi
+Template ini gratis, silahkan edit yg perlu disesuaikan. Jangan menghilangkan bagian footer!
 ## Yang perlu disesuaikan
 ### hotspot2
 1. Daftar paket wifi disesuaikan di file (paket-wifi.csv) dengan text-editor.
