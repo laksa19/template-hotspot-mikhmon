@@ -1,5 +1,5 @@
 # template-hotspot-mkhmon
-Template login hotspot Mikrotik, cocok dipasangkan dengan Mikhmon
+Template login hotspot Mikrotik, cocok dipasangkan dengan [Mikhmon](https://laksa19.github.io)
 ## Lisensi
 Template ini gratis, silahkan edit yang perlu disesuaikan. Jangan menghilangkan atau merubah bagian footer (Powered by Mikhmon)!
 ## Yang perlu disesuaikan
