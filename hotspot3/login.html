@@ -10,8 +10,12 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="d3.v3.min.js"></script>
 <script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="llqrcode.js"></script>
+<script type="text/javascript" src="webqr.js"></script>
+
 <script type="text/javascript" >
       function load() {
+        
         var mydata = JSON.parse(data);
         var title = document.getElementById('title');
           title.innerHTML = title.innerHTML +  mydata[0].nama ;
@@ -33,11 +37,58 @@
           a.innerHTML = a.innerHTML +  mydata[7].masaaktif ;
         var div = document.getElementById('notifikasi');
           div.innerHTML = div.innerHTML +  mydata[8].notifikasi ;
-        }
-</script>
+          
+          var mydataerr = JSON.parse(dataerr);
+              var error = "$(error)";
+              if (error == "user $(username) has reached uptime limit") {
+                var p = document.getElementById('notifexp');
+                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
+                window.location.href = "./login#expired";
+                
+              } else if (error == "session limit reached ($(error-orig))") {
+                var p = document.getElementById('notifexp');
+                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
+                window.location.href = "./login#expired";
+                
+              } else if (error == "user $(username) has reached traffic limit") {
+                var p = document.getElementById('notifexp');
+                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
+                window.location.href = "./login#expired";
+                
+              } else if (error == "invalid username or password") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[1].invaliduser ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "auth-in-progress = already authorizing, retry later") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[2].sudahlogin ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "no more sessions are allowed for user $(username)") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[2].sudahlogin ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "invalid username ($(username)): this MAC address is not yours") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[3].ilegal ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "you are not logged in (ip $(ip))") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[3].ilegal ;
+                window.location.href = "./login#cekuser";
+                
+              } else {
+                
+                
+              }
+      }
+              </script>
 </head>
 <body onload="load()">
-	
+
 <div class="container">
 	
 	<div class="header">
@@ -84,9 +135,6 @@
             <input type="hidden" name="popup" value="true" />
             <input  name="usernamekv" type="text" placeholder="Kode Voucher" value="$(username)"/>
             <input type="submit" class="button" value=" Login " />
-            $(if error)<br>
-              <center><div style="color: red; font-size: 14px">kode voucher tidak sesuai atau sudah dipakai!</div></center>
-            $(endif)
             </form>
             </center>
         </div>
@@ -122,13 +170,25 @@
               <input  name="usernameup" type="text" placeholder="Username" value="$(username)"/>
               <input  name="passwordup" type="password" placeholder="Password"/>
               <input type="submit" class="button" value=" Login " />
-            $(if error)<br>
-              <center><div style="color: red; font-size: 14px">$(error)</div></center>
-            $(endif)
             </form>
             </center>
         </div>
       </div>
+      <div id="cekuser" class="modal-window">
+        <div>
+          <a style="font-weight:bold;" href="#" title="Close" class="modal-close">X</a>
+        <h1>Peringatan</h1>
+        <p id="notiferr"></p>
+        </div>
+      </div>
+      <div id="expired" class="modal-window">
+        <div>
+          <a style="font-weight:bold;" href="#" title="Close" class="modal-close">X</a>
+        <h1>Expired</h1>
+        <p id="notifexp"></p>
+        </div>
+      </div>
+
 <script>
 function openLogin(evt, loginName) {
     var i, tabcontent, tablinks;
@@ -194,7 +254,7 @@ document.getElementById("defaultOpen").click();
 
 	<div class="footer">
 	  <i>Copyright &copy; <i id="copyright"></i></i><br>
-	  <i>Powered by <a href="https://laksa19.github.io">Mikhmon</a></i>
+	  <i>Powered by <a href="https://laksa19.github.io">Mikhmon</a></i> <!-- Tolong jangan dihilangkan bagian ini-->
 	</div> <!-- .footer -->
  
 </div>

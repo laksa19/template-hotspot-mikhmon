@@ -277,4 +277,53 @@ table.tpaketwifi tr:nth-child(even){
 
 }
 
+.modal-window {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.15);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modal-window:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window>div {
+  width: 300px;
+  position: relative;
+  margin: 10% auto;
+  padding: 1rem;
+  background: #3D4241;
+  color: #FFFFFF;
+}
+
+.modal-window header {
+  font-weight: bold;
+}
+
+.modal-close {
+  color: #ffffff;
+  line-height: 25px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 50px;
+  text-decoration: none;
+  background-color: red;
+}
+
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
 
