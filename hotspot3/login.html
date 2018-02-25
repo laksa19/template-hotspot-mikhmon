@@ -157,7 +157,7 @@
         $(endif)
         <div>
           <center>
-          <p style="font-size: 14px; padding-top:10px" id="kodevoucher1">Login </p>$(if trial == 'yes')<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" id="trial1"></a>.$(endif)<br>
+          <p style="font-size: 14px; padding-top:10px" id="kodevoucher1">Login </p>$(if trial == 'yes')<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" id="trial1"></a>$(endif)<br>
           <br>
           <form autocomplete="off" name="loginkv" action="$(link-login-only)" method="post"
           $(if chap-id) onSubmit="return doLoginkv()" $(endif)>
@@ -191,7 +191,7 @@
         $(endif)
         <div>
           <center>
-          <p style="font-size: 14px; padding-top:10px" id="userpass1">Login </p>$(if trial == 'yes') <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" id="trial2"></a>.$(endif)<br>
+          <p style="font-size: 14px; padding-top:10px" id="userpass1">Login </p>$(if trial == 'yes') <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" id="trial2"></a>$(endif)<br>
           <br>
             <form autocomplete="off" name="loginup" action="$(link-login-only)" method="post"
             $(if chap-id) onSubmit="return doLoginup()" $(endif)>
