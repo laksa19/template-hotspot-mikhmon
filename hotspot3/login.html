@@ -37,6 +37,36 @@
           a.innerHTML = a.innerHTML +  mydata[7].masaaktif ;
         var div = document.getElementById('notifikasi');
           div.innerHTML = div.innerHTML +  mydata[8].notifikasi ;
+        var button = document.getElementById('kodevoucher');
+          button.innerHTML = button.innerHTML +  mydata[9].kodevoucher ;
+        var button = document.getElementById('userpass');
+          button.innerHTML = button.innerHTML +  mydata[10].userpass ;
+        var p = document.getElementById('kodevoucher1');
+          p.innerHTML = p.innerHTML +  mydata[9].kodevoucher ;
+        var p = document.getElementById('userpass1');
+          p.innerHTML = p.innerHTML +  mydata[10].userpass ;
+        var a = document.getElementById('trial1');
+          a.innerHTML = a.innerHTML +  mydata[11].trial ;
+        var a = document.getElementById('trial2');
+          a.innerHTML = a.innerHTML +  mydata[11].trial ;
+        
+        var mydatat = JSON.parse(datatitle);
+        var h3 = document.getElementById('title1');
+          h3.innerHTML = h3.innerHTML +  mydatat[0].title1 ;
+        var h3 = document.getElementById('title2');
+          h3.innerHTML = h3.innerHTML +  mydatat[1].title2 ;
+        var h3 = document.getElementById('title3');
+          h3.innerHTML = h3.innerHTML +  mydatat[2].title3 ;
+        var h3 = document.getElementById('title4');
+          h3.innerHTML = h3.innerHTML +  mydatat[3].title4 ;
+        var h3 = document.getElementById('title5');
+          h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
+        var h3 = document.getElementById('title6');
+          h3.innerHTML = h3.innerHTML +  mydatat[5].title6 ;
+        var h1 = document.getElementById('title7');
+          h1.innerHTML = h1.innerHTML +  mydatat[6].title7 ;
+        var h1 = document.getElementById('title8');
+          h1.innerHTML = h1.innerHTML +  mydatat[7].title8 ;
           
           var mydataerr = JSON.parse(dataerr);
               var error = "$(error)";
@@ -100,10 +130,10 @@
 	<div class="main">
 		
 		<div class="left">
-		  <h3>Silahkan Login</h3>
+		  <h3 id="title1"></h3>
 		  <div class="tab">
-		    <button class="tablinks" onclick="openLogin(event, 'KV')" id="defaultOpen">Kode Voucher</button>
-	      <button class="tablinks" onclick="openLogin(event, 'UP')">User Password</button>
+		    <button class="tablinks" onclick="openLogin(event, 'KV')" id="kodevoucher"></button>
+	      <button class="tablinks" onclick="openLogin(event, 'UP')" id="userpass"></button>
 	    </div>
 	    
 <!-- Login 1 kolom-->
@@ -127,7 +157,7 @@
         $(endif)
         <div>
           <center>
-          <p style="font-size: 14px; padding-top:10px">Login Kode Voucher<br>$(if trial == 'yes')Coba gratis, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik disini</a>.$(endif)</p>
+          <p style="font-size: 14px; padding-top:10px" id="kodevoucher1">Login </p>$(if trial == 'yes')<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" id="trial1"></a>.$(endif)<br>
           <br>
           <form autocomplete="off" name="loginkv" action="$(link-login-only)" method="post"
           $(if chap-id) onSubmit="return doLoginkv()" $(endif)>
@@ -161,7 +191,7 @@
         $(endif)
         <div>
           <center>
-          <p style="font-size: 14px; padding-top:10px">Login Username & Password<br>$(if trial == 'yes')Coba gratis, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik disini</a>.$(endif)</p>
+          <p style="font-size: 14px; padding-top:10px" id="userpass1">Login </p>$(if trial == 'yes') <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" id="trial2"></a>.$(endif)<br>
           <br>
             <form autocomplete="off" name="loginup" action="$(link-login-only)" method="post"
             $(if chap-id) onSubmit="return doLoginup()" $(endif)>
@@ -177,14 +207,14 @@
       <div id="cekuser" class="modal-window">
         <div>
           <a style="font-weight:bold;" href="#" title="Close" class="modal-close">X</a>
-        <h1>Peringatan</h1>
+        <h1 id="title7"></h1>
         <p id="notiferr"></p>
         </div>
       </div>
       <div id="expired" class="modal-window">
         <div>
           <a style="font-weight:bold;" href="#" title="Close" class="modal-close">X</a>
-        <h1>Expired</h1>
+        <h1 id="title8"></h1>
         <p id="notifexp"></p>
         </div>
       </div>
@@ -205,7 +235,7 @@ function openLogin(evt, loginName) {
 }
 
 // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+document.getElementById("kodevoucher").click();
 </script>
       <br>
       <div style="font-size: 14px; text-align:center; font-weight:bold;"><a id="cek" href="./detail.html"></a></div><br>
@@ -214,9 +244,9 @@ document.getElementById("defaultOpen").click();
 		<div class="middle">
 			<h3 id="nama"></h3>
 			<p id="keterangan"></p>
-			<h3>Voucher</h3>
+			<h3 id="title2"></h3>
 			<p id="voucher"></p>
-			<h3> Daftar Paket Wifi</h3>
+			<h3 id="title3"></h3>
 		  <center>
 			<table id="paketwifi" align="center" class="tpaketwifi"></table>
 			</center>
@@ -240,11 +270,11 @@ document.getElementById("defaultOpen").click();
 		</div> <!-- .middle -->
 
 		<div class="right">
-		  <h3>Alamat</h3>
+		  <h3 id="title4"></h3>
 		  <p id="alamat"></p>
-		  <h3>Kontak</h3>
+		  <h3 id="title5"></h3>
 		  <p id="phone"></p>
-		  <h3>Sponsor</h3>
+		  <h3 id="title6"></h3>
 		  <p id="sponsor"></p>
 		  <img src="img/sponsor.png" alt="sponsor" height="100%" width="100%">
 		  
