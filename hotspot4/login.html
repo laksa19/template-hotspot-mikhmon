@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title id="title"></title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="d3.v3.min.js"></script>
+<script type="text/javascript" src="data.js"></script>
+
+<script type="text/javascript" >
+      function load() {
+        
+        var mydata = JSON.parse(data);
+        var title = document.getElementById('title');
+          title.innerHTML = title.innerHTML +  mydata[0].nama ;
+        var p = document.getElementById('alamat');
+          p.innerHTML = p.innerHTML +  mydata[1].alamat ;
+        var p = document.getElementById('phone');
+          p.innerHTML = p.innerHTML +  mydata[2].phone ;
+        var p = document.getElementById('keterangan');
+          p.innerHTML = p.innerHTML +  mydata[3].keterangan ;
+        var i = document.getElementById('copyright');
+          i.innerHTML = i.innerHTML +  mydata[4].copyright ;
+        var a = document.getElementById('cek');
+          a.innerHTML = a.innerHTML +  mydata[5].masaaktif ;
+        var a = document.getElementById('trial1');
+          a.innerHTML = a.innerHTML +  mydata[6].trial ;
+        var a = document.getElementById('trial2');
+          a.innerHTML = a.innerHTML +  mydata[6].trial ;
+        var p = document.getElementById('notifikasi');
+          p.innerHTML = p.innerHTML +  mydata[7].notifikasi ;
+        
+        var mydatat = JSON.parse(datatitle);
+        var h3 = document.getElementById('title1');
+          h3.innerHTML = h3.innerHTML +  mydatat[0].title1 ;
+        var h3 = document.getElementById('title2');
+          h3.innerHTML = h3.innerHTML +  mydatat[1].title2 ;
+        var h3 = document.getElementById('title3');
+          h3.innerHTML = h3.innerHTML +  mydatat[2].title3 ;
+        var h3 = document.getElementById('title4');
+          h3.innerHTML = h3.innerHTML +  mydatat[3].title4 ;
+        var h3 = document.getElementById('title5');
+          h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
+        var h3 = document.getElementById('title6');
+          h3.innerHTML = h3.innerHTML +  mydatat[5].title6 ;
+          
+          var mydataerr = JSON.parse(dataerr);
+              var error = "$(error)";
+              if (error == "user $(username) has reached uptime limit") {
+                var p = document.getElementById('notifexp');
+                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
+                window.location.href = "./login#expired";
+                
+              } else if (error == "session limit reached ($(error-orig))") {
+                var p = document.getElementById('notifexp');
+                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
+                window.location.href = "./login#expired";
+                
+              } else if (error == "user $(username) has reached traffic limit") {
+                var p = document.getElementById('notifexp');
+                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
+                window.location.href = "./login#expired";
+                
+              } else if (error == "invalid username or password") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[1].invaliduser ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "auth-in-progress = already authorizing, retry later") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[2].sudahlogin ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "no more sessions are allowed for user $(username)") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[2].sudahlogin ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "invalid username ($(username)): this MAC address is not yours") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[3].ilegal ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "you are not logged in (ip $(ip))") {
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[3].ilegal ;
+                window.location.href = "./login#cekuser";
+                
+              } else {
+                
+                
+              }
+      }
+</script>
+</head>
+<body class="bg" onload="load()">
+
+<div class="container">
+
+  <div class="notif" id="notifikasi">
+
+  </div> <!-- .notif-->
+
+		<div class="left">
+		  <center><img src="img/logo.png" alt="kemangi 41" style="border-radius: 5px; width:200px; height:auto;"/><br></center>
+		  <h3></h3>
+		  <div class="tab">
+		    <button class="tablinks" onclick="openLogin(event, 'KV')" id="kodevoucher">Voucher</button>
+	      <button class="tablinks" onclick="openLogin(event, 'UP')" id="userpass">Member</button>
+	    </div>
+	    
+<!-- Login 1 kolom-->
+      <div id="KV" class="tabcontent">
+        $(if chap-id)
+        <form name="sendinkv" action="$(link-login-only)" method="post">
+          <input type="hidden" name="username" />
+          <input type="hidden" name="password" />
+          <input type="hidden" name="dst" value="$(link-orig)" />
+          <input type="hidden" name="popup" value="true" />
+        </form>
+        <script type="text/javascript" src="/md5.js"></script>
+        <script type="text/javascript">
+          function doLoginkv() {
+            document.sendinkv.username.value = document.loginkv.usernamekv.value;
+            document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.usernamekv.value + '$(chap-challenge)');
+            document.sendinkv.submit();
+            return false;
+          }
+        </script>
+        $(endif)
+        <div>
+          <center>
+          <div style="padding-top:10px;padding-bottom:10px;">$(if trial == 'yes')<a id="trial1" class="a" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"></a>$(endif)</div>
+          <form autocomplete="off" name="loginkv" action="$(link-login-only)" method="post"
+          $(if chap-id) onSubmit="return doLoginkv()" $(endif)>
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+            <input  name="usernamekv" type="text" placeholder="Voucher" value="$(username)"/>
+            <input type="submit" class="button" value=" Login " />
+            </form>
+            </center>
+        </div>
+      </div>
+        
+<!-- Login 2 kolom -->
+      <div id="UP" class="tabcontent">
+        $(if chap-id)
+        <form name="sendinup" action="$(link-login-only)" method="post">
+          <input type="hidden" name="username" />
+          <input type="hidden" name="password" />
+          <input type="hidden" name="dst" value="$(link-orig)" />
+          <input type="hidden" name="popup" value="true" />
+        </form>
+        <script type="text/javascript" src="/md5.js"></script>
+        <script type="text/javascript">
+          function doLoginup() {
+            document.sendinup.username.value = document.loginup.usernameup.value;
+            document.sendinup.password.value = hexMD5('$(chap-id)' + document.loginup.passwordup.value + '$(chap-challenge)');
+            document.sendinup.submit();
+            return false;
+          }
+        </script>
+        $(endif)
+        <div>
+          <center>
+          <div style="padding-top:10px;padding-bottom:10px;">$(if trial == 'yes')<a id="trial2" class="a" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"></a>$(endif)</div>
+            <form autocomplete="off" name="loginup" action="$(link-login-only)" method="post"
+            $(if chap-id) onSubmit="return doLoginup()" $(endif)>
+              <input type="hidden" name="dst" value="$(link-orig)" />
+              <input type="hidden" name="popup" value="true" />
+              <input  name="usernameup" type="text" placeholder="Username" value="$(username)"/>
+              <input  name="passwordup" type="password" placeholder="Password"/>
+              <input type="submit" class="button" value=" Login " />
+            </form>
+            </center>
+        </div>
+      </div>
+      <div id="cekuser" class="modal-window">
+        <div>
+          <a style="font-weight:bold;" href="#" title="Close" class="modal-close">X</a>
+        <h1 id="title5"></h1>
+        <p id="notiferr"></p>
+        </div>
+      </div>
+      <div id="expired" class="modal-window">
+        <div>
+          <a style="font-weight:bold;" href="#" title="Close" class="modal-close">X</a>
+        <h1 id="title6"></h1>
+        <p id="notifexp"></p>
+        </div>
+      </div>
+
+<script>
+function openLogin(evt, loginName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(loginName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("kodevoucher").click();
+</script>
+      <br>
+      <div style="font-size: 14px; text-align:center; font-weight:bold;"><a class="a" id="cek" href="./detail.html"></a></div><br>
+		</div>
+		
+		<div class="middle">
+			<h3 id="title1"></h3>
+		  <center>
+			<table id="paketwifi" align="center" class="tpaketwifi"></table>
+			</center>
+			<script type="text/javascript" charset="utf-8">
+            d3.text("paket-wifi.csv", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+
+                var container = d3.select("table.tpaketwifi")
+                    .append("div")
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+      </script>
+		</div> <!-- .middle -->
+
+		<div class="right">
+		  <h3 id="title2"></h3>
+		  <p id="keterangan"></p>
+		  <h3 id="title3"></h3>
+		  <p id="alamat"></p>
+		  <h3 id="title4"></h3>
+		  <p id="phone"></p>
+		  
+		</div>
+
+	<div class="footer">
+	  <i>Copyright &copy; <i id="copyright"></i></i><br>
+	  <i>Powered by <a href="https://laksa19.github.io">Mikhmon</a></i> <!-- Tolong jangan dihilangkan bagian ini-->
+	</div>
+ 
+</div>
+</body>
+</html>
