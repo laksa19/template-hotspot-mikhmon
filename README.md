@@ -25,3 +25,4 @@ Template ini gratis, silahkan edit yang perlu disesuaikan. Jangan menghilangkan 
       ```
 4. Template tidak menggunakan notifikasi expired di laman terpisah, melainkan menggunakan [modal](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal) sudah terintegrasi di login.html.
 
+5. Notifikasi Expired bereaksi terhadap limit uptime, untuk lebih mudah bisa menggunakan [MIKHMON](https://laksa19.github.io). Dengan user profile yang menggunakan Expired Mode "Remove+Notice".
