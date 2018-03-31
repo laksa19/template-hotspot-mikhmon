@@ -43,57 +43,7 @@
           h3.innerHTML = h3.innerHTML +  mydatat[2].title3 ;
         var h3 = document.getElementById('title4');
           h3.innerHTML = h3.innerHTML +  mydatat[3].title4 ;
-        var h3 = document.getElementById('title5');
-          h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
-        var h3 = document.getElementById('title6');
-          h3.innerHTML = h3.innerHTML +  mydatat[5].title6 ;
           
-          var mydataerr = JSON.parse(dataerr);
-              var error = "$(error)";
-              if (error == "user $(username) has reached uptime limit") {
-                var p = document.getElementById('notifexp');
-                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
-                window.location.href = "./login#expired";
-                
-              } else if (error == "session limit reached ($(error-orig))") {
-                var p = document.getElementById('notifexp');
-                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
-                window.location.href = "./login#expired";
-                
-              } else if (error == "user $(username) has reached traffic limit") {
-                var p = document.getElementById('notifexp');
-                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
-                window.location.href = "./login#expired";
-                
-              } else if (error == "invalid username or password") {
-                var p = document.getElementById('notiferr');
-                p.innerHTML = p.innerHTML +  mydataerr[1].invaliduser ;
-                window.location.href = "./login#cekuser";
-                
-              } else if (error == "auth-in-progress = already authorizing, retry later") {
-                var p = document.getElementById('notiferr');
-                p.innerHTML = p.innerHTML +  mydataerr[2].sudahlogin ;
-                window.location.href = "./login#cekuser";
-                
-              } else if (error == "no more sessions are allowed for user $(username)") {
-                var p = document.getElementById('notiferr');
-                p.innerHTML = p.innerHTML +  mydataerr[2].sudahlogin ;
-                window.location.href = "./login#cekuser";
-                
-              } else if (error == "invalid username ($(username)): this MAC address is not yours") {
-                var p = document.getElementById('notiferr');
-                p.innerHTML = p.innerHTML +  mydataerr[3].ilegal ;
-                window.location.href = "./login#cekuser";
-                
-              } else if (error == "you are not logged in (ip $(ip))") {
-                var p = document.getElementById('notiferr');
-                p.innerHTML = p.innerHTML +  mydataerr[3].ilegal ;
-                window.location.href = "./login#cekuser";
-                
-              } else {
-                
-                
-              }
       }
 </script>
 </head>
@@ -256,5 +206,85 @@ document.getElementById("kodevoucher").click();
 	</div>
  
 </div>
+      <script  type="text/javascript" >
+          var mydatat = JSON.parse(datatitle);
+          var mydataerr = JSON.parse(dataerr);
+          var error = "$(error)";
+              if (error == "user $(username) has reached uptime limit") {
+                var h3 = document.getElementById('title6');
+                h3.innerHTML = h3.innerHTML +  mydatat[5].title6 ;
+                var p = document.getElementById('notifexp');
+                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
+                window.location.href = "./login#expired";
+                
+              } else if (error == "session limit reached ($(error-orig))") {
+                var h3 = document.getElementById('title6');
+                h3.innerHTML = h3.innerHTML +  mydatat[5].title6 ;
+                var p = document.getElementById('notifexp');
+                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
+                window.location.href = "./login#expired";
+                
+              } else if (error == "user $(username) has reached traffic limit") {
+                var h3 = document.getElementById('title6');
+                h3.innerHTML = h3.innerHTML +  mydatat[5].title6 ;
+                var p = document.getElementById('notifexp');
+                p.innerHTML = p.innerHTML +  mydataerr[0].expired ;
+                window.location.href = "./login#expired";
+                
+              } else if (error == "invalid username or password") {
+                var h3 = document.getElementById('title5');
+                h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[1].invaliduser ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "auth-in-progress = already authorizing, retry later") {
+                var h3 = document.getElementById('title5');
+                h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[2].sudahlogin ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "no more sessions are allowed for user $(username)") {
+                var h3 = document.getElementById('title5');
+                h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[2].sudahlogin ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "invalid username ($(username)): this MAC address is not yours") {
+                var h3 = document.getElementById('title5');
+                h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[3].ilegal ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "you are not logged in (ip $(ip))") {
+                var h3 = document.getElementById('title5');
+                h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[3].ilegal ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "RADIUS server is not responding") {
+                var h3 = document.getElementById('title5');
+                h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[3].radius1 ;
+                window.location.href = "./login#cekuser";
+                
+              } else if (error == "$(error-orig)") {
+                var h3 = document.getElementById('title5');
+                h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
+                var p = document.getElementById('notiferr');
+                p.innerHTML = p.innerHTML +  mydataerr[3].radius2 ;
+                window.location.href = "./login#cekuser";
+                
+                
+              } else {
+                
+                
+              }
+      </script>
 </body>
 </html>
