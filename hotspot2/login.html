@@ -49,7 +49,7 @@ $(if chap-id)
 	<!--
 	    function doLoginkv() {
 		document.sendinkv.username.value = document.loginkv.usernamekv.value;
-		document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.usernamekv.value + '$(chap-challenge)');
+		document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.passwordkv.value + '$(chap-challenge)');
 		document.sendinkv.submit();
 		return false;
 	    }
@@ -75,7 +75,10 @@ $(endif)
 							<td>&nbsp;</td>
 						</tr>
 						<tr>
-							<td colspan=2><input  name="usernamekv" type="text" placeholder="Kode Voucher" value="$(username)"/></td>
+							<td colspan=2><input  name="usernamekv" type="text" placeholder="Kode Voucher"  onchange="updateInput(this.value)" value="$(username)"/></td>
+						</tr>
+						<tr>
+						  <td colspan=2><input id="pass" name="passwordkv" placeholder="Password" type="hidden"/></td>
 						</tr>
 						<td colspan=2 align="center";><input type="submit" class="button" value=" Login | Masuk" /></td>
 					</tr>
@@ -85,6 +88,11 @@ $(endif)
 		</td>
 		</tr>
 	</table>
+	<script type="text/javascript">
+              function updateInput(passwd){
+              document.getElementById("pass").value = passwd;
+              }
+  </script>
 </div>
 <div id="UP" class="tabcontent">
 $(if chap-id)
@@ -172,7 +180,7 @@ document.getElementById("defaultOpen").click();
 			<td align="center">
 				<br /><div style="font-size: 14px; color: white;">Alamat : Tanah Merah 4 Gang Kemangi No 41</div>
 				<br /><div style="font-size: 14px; color: white;">Powered by</div>
-				<br /><img src="img/sponsor.png"  style="border-radius: 5px" alt="sponsor" height="175" width="300"> 
+				<br /><img src="img/sponsor.png"  style="border-radius: 5px" alt="sponsor" height="175" width="300">
 			</td>
 		</tr>
 </table>
