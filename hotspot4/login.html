@@ -76,7 +76,7 @@
         <script type="text/javascript">
           function doLoginkv() {
             document.sendinkv.username.value = document.loginkv.usernamekv.value;
-            document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.usernamekv.value + '$(chap-challenge)');
+            document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.passwordkv.value + '$(chap-challenge)');
             document.sendinkv.submit();
             return false;
           }
@@ -89,10 +89,16 @@
           $(if chap-id) onSubmit="return doLoginkv()" $(endif)>
             <input type="hidden" name="dst" value="$(link-orig)" />
             <input type="hidden" name="popup" value="true" />
-            <input  name="usernamekv" type="text" placeholder="Voucher" value="$(username)"/>
+            <input id="user" name="usernamekv" type="text" placeholder="Voucher" onchange="updateInput(this.value)" value="$(username)"/>
+            <input id="pass" name="passwordkv" placeholder="Password" type="hidden"/>
             <input type="submit" class="button" value=" Login " />
             </form>
             </center>
+            <script type="text/javascript">
+              function updateInput(passwd){
+              document.getElementById("pass").value = passwd;
+              }
+            </script>
         </div>
       </div>
         
@@ -270,10 +276,11 @@ document.getElementById("kodevoucher").click();
                 var h3 = document.getElementById('title5');
                 h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
                 var p = document.getElementById('notiferr');
-                p.innerHTML = p.innerHTML +  mydataerr[3].radius ;
+                p.innerHTML = p.innerHTML +  mydataerr[3].radius1 ;
                 window.location.href = "./login#cekuser";
-
+                
               } else {
+                
                 
               }
       </script>
