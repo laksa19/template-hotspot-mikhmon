@@ -99,7 +99,7 @@
         <script type="text/javascript">
           function doLoginkv() {
             document.sendinkv.username.value = document.loginkv.usernamekv.value;
-            document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.usernamekv.value + '$(chap-challenge)');
+            document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.passwordkv.value + '$(chap-challenge)');
             document.sendinkv.submit();
             return false;
           }
