@@ -49,7 +49,7 @@ $(if chap-id)
 	<!--
 	    function doLoginkv() {
 		document.sendinkv.username.value = document.loginkv.usernamekv.value;
-		document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.passwordkv.value + '$(chap-challenge)');
+		document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.usernamekv.value + '$(chap-challenge)');
 		document.sendinkv.submit();
 		return false;
 	    }
@@ -88,11 +88,6 @@ $(endif)
 		</td>
 		</tr>
 	</table>
-	<script type="text/javascript">
-              function updateInput(passwd){
-              document.getElementById("pass").value = passwd;
-              }
-  </script>
 </div>
 <div id="UP" class="tabcontent">
 $(if chap-id)
