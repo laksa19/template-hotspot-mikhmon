@@ -59,10 +59,10 @@
           h3.innerHTML = h3.innerHTML +  mydatat[2].title3 ;
         var h3 = document.getElementById('title4');
           h3.innerHTML = h3.innerHTML +  mydatat[3].title4 ;
-        var h3 = document.getElementById('title5');
-          h3.innerHTML = h3.innerHTML +  mydatat[4].title5 ;
-        var h3 = document.getElementById('title6');
-          h3.innerHTML = h3.innerHTML +  mydatat[5].title6 ;
+        var h1 = document.getElementById('title5');
+          h1.innerHTML = h1.innerHTML +  mydatat[4].title5 ;
+        var h1 = document.getElementById('title6');
+          h1.innerHTML = h1.innerHTML +  mydatat[5].title6 ;
           
       }
 </script>
@@ -99,7 +99,7 @@
         <script type="text/javascript">
           function doLoginkv() {
             document.sendinkv.username.value = document.loginkv.usernamekv.value;
-            document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.usernamekv.value + '$(chap-challenge)');
+            document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.passwordkv.value + '$(chap-challenge)');
             document.sendinkv.submit();
             return false;
           }
@@ -113,11 +113,16 @@
           $(if chap-id) onSubmit="return doLoginkv()" $(endif)>
             <input type="hidden" name="dst" value="$(link-orig)" />
             <input type="hidden" name="popup" value="true" />
-            <input id="user" name="usernamekv" type="text" placeholder="Voucher" value="$(username)"/>
+            <input id="user" name="usernamekv" type="text" placeholder="Voucher" onchange="updateInput(this.value)" value="$(username)"/>
             <input id="pass" name="passwordkv" placeholder="Password" type="hidden"/>
             <input type="submit" class="button" value=" Login " />
             </form>
             </center>
+            <script type="text/javascript">
+              function updateInput(passwd){
+              document.getElementById("pass").value = passwd;
+              }
+            </script>
         </div>
       </div>
         
