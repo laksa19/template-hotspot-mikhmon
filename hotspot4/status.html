@@ -12,17 +12,7 @@ $(endif)
 <link rel="icon" href="favicon.ico" />
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript" src="data.js"></script>
-<script type="text/javascript" >
-      function load() {
-        var mydata = JSON.parse(data);
-        var title = document.getElementById('title');
-          title.innerHTML = title.innerHTML +  mydata[0].nama ;
-        var a = document.getElementById('cek');
-          a.innerHTML = a.innerHTML +  mydata[5].masaaktif ;
-        var div = document.getElementById('notifikasi');
-          div.innerHTML = div.innerHTML +  mydata[7].notifikasi ;
-        }
-</script>
+
 <script language="JavaScript">
 
 $(if advert-pending == 'yes')
@@ -49,7 +39,7 @@ $(endif)
 
 </script>
 </head>
-  <body class="bg" onLoad="load()">
+  <body class="bg">
     
     <center>
     <div class="status">
@@ -92,5 +82,11 @@ $(endif)
     <br>
     </div>
     </center>
+    <script type="text/javascript" >
+        var mydata = JSON.parse(data);
+        document.getElementById('title').innerHTML =  mydata[0].nama ;
+        document.getElementById('cek').innerHTML =  mydata[5].masaaktif ;
+        document.getElementById('notifikasi').innerHTML =  mydata[7].notifikasi ;
+    </script>
   </body>
 </html>

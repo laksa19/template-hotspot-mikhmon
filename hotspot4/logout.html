@@ -9,16 +9,9 @@
 <link rel="icon" href="favicon.ico" />
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript" src="data.js"></script>
-<script type="text/javascript" >
-      function load() {
-        var mydata = JSON.parse(data);
-        var title = document.getElementById('title');
-          title.innerHTML = title.innerHTML +  mydata[0].nama ;
-        }
-</script>
 </head>
 
-<body class="bg" onLoad="load()">
+<body class="bg">
 
 <script language="JavaScript">
 <!--
@@ -61,5 +54,9 @@
 
 </div>
 </center>
+<script type="text/javascript" >
+        var mydata = JSON.parse(data);
+        var title = document.getElementById('title').innerHTML = mydata[0].nama ;
+</script>
 </body>
 </html>
