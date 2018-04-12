@@ -12,13 +12,12 @@
 <script type="text/javascript" >
       function load() {
         var mydata = JSON.parse(data);
-        var title = document.getElementById('title');
-          title.innerHTML = title.innerHTML +  mydata[0].nama ;
+        document.getElementById('title').innerHTML =  mydata[0].nama ;
         }
 </script>
 </head>
-
-<body align="center" onLoad="load()">
+<body class="bstatus" onLoad="load()">
+<center>
 <script language="JavaScript">
 <!--
     function openLogin() {
@@ -34,10 +33,11 @@
 		}
 //-->
 </script>
+
 <div class="status">
 <br>
 <b>Anda telah logout</b> <br><br>
-<center>
+
   <table class="tstatus" align="center">
     <tr><td align="right">User</td><td>$(username)</td></tr>
     <tr><td align="right">IP Address</td><td>$(ip)</td></tr>
@@ -56,7 +56,8 @@
       <input type="submit" class="button" value=" Login kembali ">
     </form>
   <br>
-</center>
+
 </div>
+</center>
 </body>
 </html>

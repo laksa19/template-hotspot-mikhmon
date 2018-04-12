@@ -15,12 +15,9 @@ $(endif)
 <script type="text/javascript" >
       function load() {
         var mydata = JSON.parse(data);
-        var title = document.getElementById('title');
-          title.innerHTML = title.innerHTML +  mydata[0].nama ;
-        var a = document.getElementById('cek');
-          a.innerHTML = a.innerHTML +  mydata[7].masaaktif ;
-        var div = document.getElementById('notifikasi');
-          div.innerHTML = div.innerHTML +  mydata[8].notifikasi ;
+        document.getElementById('title').innerHTML = mydata[0].nama ;
+        document.getElementById('cek').innerHTML = mydata[7].masaaktif ;
+        document.getElementById('notifikasi').innerHTML = mydata[8].notifikasi ;
         }
 </script>
 <script language="JavaScript">
@@ -43,8 +40,8 @@ $(endif)
     }
     function readablizeBytes(bytes) {
 		var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
-		var e = Math.floor(Math.log(bytes)/Math.log(1024));
-		return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+		var e = Math.floor(Math.log(bytes)/Math.log(1000));
+		return (bytes/Math.pow(1000, Math.floor(e))).toFixed(2)+" "+s[e];
 		}
 
 </script>
