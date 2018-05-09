@@ -56,7 +56,7 @@
             <input type="hidden" name="popup" value="true" />
             <input id="user" name="usernamekv" type="text" placeholder="Voucher" onchange="updateInput(this.value)" value="$(username)"/>
             <input id="pass" name="passwordkv" placeholder="Password" type="hidden"/>
-            <input type="submit" class="button" value=" Login " />
+            <input type="submit" class="buttona" value=" Login " />
             </form>
             </center>
             <script type="text/javascript">
@@ -95,7 +95,7 @@
               <input type="hidden" name="popup" value="true" />
               <input  name="usernameup" type="text" placeholder="Username" value="$(username)"/>
               <input  name="passwordup" type="password" placeholder="Password"/>
-              <input type="submit" class="button" value=" Login " />
+              <input type="submit" class="buttona" value=" Login " />
             </form>
             </center>
         </div>
@@ -133,8 +133,6 @@ function openLogin(evt, loginName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("kodevoucher").click();
 </script>
-      <br>
-      <div style="font-size: 14px; text-align:center; font-weight:bold;"><a class="a" id="cek" href="./detail.html"></a></div><br>
 		</div>
 		
 		<div class="middle">
@@ -242,7 +240,6 @@ document.getElementById("kodevoucher").click();
         document.getElementById('phone').innerHTML = mydata[2].phone ;
         document.getElementById('keterangan').innerHTML = mydata[3].keterangan ;
         document.getElementById('copyright').innerHTML = mydata[4].copyright ;
-        document.getElementById('cek').innerHTML = mydata[5].masaaktif ;
         document.getElementById('trial1').innerHTML = mydata[6].trial ;
         document.getElementById('trial2').innerHTML = mydata[6].trial ;
         document.getElementById('notifikasi').innerHTML = mydata[7].notifikasi ;

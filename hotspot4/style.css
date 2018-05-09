@@ -123,6 +123,7 @@ h3{
   position: relative;
   background-color: rgba(255, 255, 255, 0.7);
   color: black;
+  padding-top: 10px;
   margin-top:10%;
 	margin-left:auto;
   margin-right:auto;
@@ -145,7 +146,7 @@ textarea,input,select {
   
 }
 
-.button {
+.buttona {
   background-color: #008CCA;
   border: 1px solid #008CCA;
   border-radius:5px;
@@ -154,11 +155,31 @@ textarea,input,select {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-weight:bold;
   margin: 10px 1px;
+  height: 35px;
   cursor: pointer;
 }
-.button:hover{
+.buttona:hover{
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.buttonb {
+  background-color: #DD2C00;
+  border: 1px solid #DD2C00;
+  border-radius:5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
   font-weight:bold;
+  margin: 10px 1px;
+  cursor: pointer;
+  height: 35px;
+}
+.buttonb:hover{
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Style the tab */
@@ -180,7 +201,8 @@ div.tab button {
   cursor: pointer;
   padding: 5px 5px;
   transition: 0.3s;
-  height: 30px;
+  font-weight:bold;
+  height: 35px;
   width:50%;
 }
 

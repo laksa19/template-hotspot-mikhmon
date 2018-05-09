@@ -44,14 +44,13 @@ $(endif)
     <center>
     <div class="status">
       $(if login-by == 'trial')
-	     <div style="text-align: center; font-weight:bold; margin-top:10px;">Selamat datang !</div><br>
+	     <div style="text-align: center; font-weight:bold; margin-top:10px;">Selamat datang !</div>
       $(elif login-by != 'mac')
-	    <br><div style="text-align: center; font-weight:bold; margin-top:10px;">Selamat datang $(username)</div><br>
+	    <div style="text-align: center; font-weight:bold; margin-top:10px;">Selamat datang $(username)</div>
       $(endif)
       
-    <div class="notif" id="notifikasi"></div><br>
-    <div style="font-size: 14px; text-align:center; font-weight:bold;"><a class="a" id="cek" href="./detail.html"></a></div><br>
-    
+    <div class="notif" id="notifikasi"></div>
+    <div style="padding:10px;"><a class="a" id="cek" href="./detail.html"></a></div>
     <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
     
       <table class="tstatus">
@@ -75,7 +74,7 @@ $(endif)
         </table>
         $(if login-by-mac != 'yes')
         <br>
-        <input type="submit" class="button" value=" Logout | Keluar ">
+        <input type="submit" class="buttonb" value=" Logout | Keluar ">
         $(endif)
       
     </form>
