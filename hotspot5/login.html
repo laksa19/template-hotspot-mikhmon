@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title id="title"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" href="css/mikhmon-ui-light.css">
+<link rel="stylesheet" href="css/background.css">
+<link rel="icon" href="img/favicon.png" />
+</head>
+
+<body class="background">
+	<div class="container">
+		<div class="row">
+			<div class="col-8 mr-a" id="main" style="float:none;">
+				<div class="row">
+					<div class="col-4">	
+						<div class="row">
+							<div class="col-12">
+								<div class="box bmh-80 bg-primary box-shadow text-center"><img src="img/logo.png" alt="kemangi 41" style="border-radius: 5px; width:100%; max-width: 200px; height:auto;"/></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="card  box-shadow">
+									<div class="card-header bg-primary"><h3>Silakan Login</h3></div>
+									<div class="card-body">
+								$(if chap-id)
+									<form name="sendin" action="$(link-login-only)" method="post">
+										<input type="hidden" name="username" />
+										<input type="hidden" name="password" />
+										<input type="hidden" name="dst" value="$(link-orig)" />
+										<input type="hidden" name="popup" value="true" />
+									</form>
+	
+									<script type="text/javascript" src="/md5.js"></script>
+									<script type="text/javascript">
+									<!--
+	    							function doLogin() {
+									document.sendin.username.value = document.login.username.value;
+									document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+									document.sendin.submit();
+									return false;
+	    							}
+									//-->
+									</script>
+								$(endif)
+						
+					<div>	
+					<form autocomplete="off" name="login" action="$(link-login-only)" method="post"
+					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+							<div class="row">
+								<div class="col-6 col-md-6"> 
+								<div class="box mr-2 pointer text-center text-light" id="btnvcr" onclick="voucher()">Voucher</div>
+								</div>
+								<div class="col-6 col-md-6">
+								<div class="box mr-2 pointer text-center text-light" id="btnmem" onclick="member()">Member</div>
+								</div>
+							</div>
+								<input class="form-control-md mr-t-10" name="username" type="text" value="$(username)" placeholder="Voucher" />
+								<input class="form-control-md mr-t-10" name="password" type="hidden" placeholder="Password" />
+
+							<div class="text-center mr-t-10">
+								<button type="submit" class="w-12 btn-md bg-success pd-5">Login</button>
+							</div>
+					</form>
+				</div>
+					
+				$(if error)<div class="alert bg-danger text-center mr-t-10">$(error)</div>$(endif)
+			</div>
+			<div class="card-footer bg-primary mr-t-10 text-center">
+				$(if trial == 'yes')Coba gratis <a class="text-danger" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik di sini</a>$(endif)
+			</div>
+		</div>
+	</div>
+	<div class="col-12">
+		<div class="card box-shadow">
+			<div class="card-header bg-warning"><h3>Catatan</h3></div>
+			<div class="card-body align-middle">Kode Voucher / Username menggunakan huruf kecil.</div>
+		</div>
+	</div>
+</div>
+</div>
+
+	<div class="col-8">
+		<div class="row">
+			<div class="col-12">
+				<div class="card box-shadow">
+					<div class="card-header bg-success"><h3>Kemangi 41</h3></div>
+					<div class="card-body">
+						<p>Kemangi 41, internet murah dengan iuran terjangkau.</p>
+						<p>Voucher iuran bisa didapatkan di Gang kluweh No. 21(Rosi), Gang Kemangi No. 41.</p>
+					</div>
+				</div>				
+			</div>
+			<div class="col-12">
+				<div class="card box-shadow">
+					<div class="card-header bg-danger"><h3>Iuran Internet</h3></div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-6">
+								<div class="box bg-success bmh-75">
+									<div class="box-group">
+            							<div class="box-group-icon">3H</div>
+              							<div class="box-group-area">
+                						<span>
+                							Rp 1.000<br>
+                							Masa Aktif 3 Jam<br>
+                						</span>
+              							</div>
+            						</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="box bg-danger bmh-75">
+									<div class="box-group">
+            							<div class="box-group-icon">6H</div>
+              							<div class="box-group-area">
+                						<span>
+                							Rp 2.000<br>
+                							Masa Aktif 6 Jam<br>
+                						</span>
+              							</div>
+            						</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="box bg-primary bmh-75">
+									<div class="box-group">
+            							<div class="box-group-icon">1D</div>
+              							<div class="box-group-area">
+                						<span>
+                							Rp 3.000<br>
+                							Masa Aktif 1 Hari<br>
+                						</span>
+              							</div>
+            						</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="box bg-warning bmh-75">
+									<div class="box-group">
+            							<div class="box-group-icon">2D</div>
+              							<div class="box-group-area">
+                						<span>
+                							Rp 5.000<br>
+                							Masa Aktif 2 Hari<br>
+                						</span>
+              							</div>
+            						</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="box bg-dark bmh-75">
+									<div class="box-group">
+            							<div class="box-group-icon">7D</div>
+              							<div class="box-group-area">
+                						<span>
+                							Rp 15.000<br>
+                							Masa Aktif 7 Hari<br>
+                						</span>
+              							</div>
+            						</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="box bg-secondary bmh-75">
+									<div class="box-group">
+            							<div class="box-group-icon">1M</div>
+              							<div class="box-group-area">
+                						<span>
+                							Rp 35.000<br>
+                							Masa Aktif 30 Hari<br>
+                						</span>
+              							</div>
+            						</div>
+								</div>
+							</div>					
+						</div>
+					</div>
+					<div class="card-footer bg-danger pd-l-10">
+			<i>Copyright &copy; 2018 Laksamadi</i>
+	  		<i>Powered by <a class="text-light" href="https://laksa19.github.io">Mikhmon</a></i> <!-- Tolong jangan dihilangkan bagian ini-->
+		</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!--
+document.login.username.focus();
+document.getElementById('title').innerHTML = window.location.hostname + " > Login";
+
+// login page 2 mode by Laksamadi Guko
+var username = document.login.username;
+var password = document.login.password;
+var luser = document.getElementById("luser");
+var lpass = document.getElementById("lpass");
+var btnmem = document.getElementById("btnmem");
+var btnvcr = document.getElementById("btnvcr");
+
+// set password = username
+function setpass(){
+  var user = username.value		
+  password.value = user;
+}
+username.onchange = setpass;
+btnmem.style = "background-color:#73818f;";
+btnvcr.style = "background-color:#20a8d8;";  
+
+// change to voucher mode
+function voucher(){
+  username.focus();
+  username.onchange = setpass;
+  username.placeholder = "Voucher";
+  password.type = "hidden"; 
+  btnmem.style = "background-color:#73818f;";
+  btnvcr.style = "background-color:#20a8d8;";  
+}
+
+// change to member mode
+function member(){
+  username.focus();
+  username.onchange = "";
+  username.placeholder = "Username";
+  password.type= "password";
+  btnmem.style = "background-color:#20a8d8;"; 
+  btnvcr.style = "background-color:#73818f;"; 
+}
+
+//-->
+</script>
+</body>
+</html>

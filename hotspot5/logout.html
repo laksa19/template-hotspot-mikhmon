@@ -1,0 +1,86 @@
+<html>
+<head>
+<title id="title"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" href="css/mikhmon-ui-light.css">
+<link rel="stylesheet" href="css/background.css">
+<link rel="icon" href="img/favicon.png" />
+</head>
+
+<body class="background">
+<script language="JavaScript">
+<!--
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+    function readablizeBytes(bytes) {
+		var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
+		var e = Math.floor(Math.log(bytes)/Math.log(1024));
+		return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+	}
+//-->
+</script>
+
+<div class="container">
+		<div class="row mt-10">
+			<div class="col-6 mr-a" style="float:none; margin-top: 10%;">
+				<div class="row">
+    				<div class="col-12">
+    					<div class="card box-shadow">
+    						<div class="card-header bg-primary"><h3>Logout</h3></div>
+    						<div class="card-body">
+								<div class="box w-12 text-center"><h3>Anda telah logout</h3></div>
+  								<table class="table table-bordered table-hover" align="center">
+								    <tr>
+								      <td align="right">User</td>
+								      <td>$(username)</td>
+								    </tr>
+								    <tr>
+								      <td align="right">IP Address</td>
+								      <td>$(ip)</td>
+								    </tr>
+								    <tr>
+								      <td align="right">MAC</td>
+								      <td>$(mac)</td>
+ 								   </tr>
+ 								   <tr>
+								      <td align="right">UL | DL</td>
+ 								      <td>$(bytes-in-nice) | $(bytes-out-nice)</td>
+								    </tr>
+    								<tr>
+      								  <td align="right">Aktif</td>
+								      <td>$(uptime)</td>
+								    </tr>
+								    $(if session-time-left)
+								    <tr>
+								      <td align="right">Sisa Kuota</td>
+								      <td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-out)));</script></td>
+								    </tr>
+								    <tr>
+									  <td align="right">Sisa Waktu</td>
+								      <td>$(session-time-left)</td>
+    								</tr>
+    								$(endif)
+  								</table>
+  								<br>
+    							<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+      								<button type="submit" class="btn-md w-12 bg-primary pd-5 ">Login kembali</button>
+    							</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " > Status";
+</script>
+</body>
+</html>
