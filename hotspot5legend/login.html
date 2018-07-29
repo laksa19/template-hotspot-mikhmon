@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>internet hotspot > login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<style type="text/css">
+body {color: #737373; font-size: 10px; font-family: verdana;}
+
+textarea,input,select,button {
+background-color: #FDFBFB;
+border: 1px solid #BBBBBB;
+padding: 2px;
+margin: 1px;
+font-size: 14px;
+color: #808080;
+cursor: pointer;
+}
+
+a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 10px; }
+a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+img {border: none;}
+td { font-size: 14px; color: #7A7A7A; }
+</style>
+
+</head>
+
+<body>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+
+<table width="100%" style="margin-top: 10%;">
+	<tr>
+	<td align="center" valign="middle">
+		<div class="notice" style="color: #c1c1c1; font-size: 9px">Please log on to use the internet hotspot service<br />$(if trial == 'yes')Free trial available, <a style="color: #FF8080"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</div><br />
+		<table width="280" height="280" style="border: 1px solid #cccccc; padding: 0px;" cellpadding="0" cellspacing="0">
+			
+			<tr>
+				<td align="center" valign="bottom" colspan="2">
+					<form autocomplete="off" name="login" action="$(link-login-only)" method="post"
+					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+						<div  style="min-height: 150px; width: 90%;">
+						<table style="width:180px;">
+							<tr>
+								<td align="center">
+									<div  style="width: 90px;" id="btnvcr" onclick="voucher()">Voucher</div>
+								</td>
+								<td align="center">
+									<div  style="width: 90px;" id="btnmem" onclick="member()">Member</div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="border-bottom: 1px solid #ccc"></td>
+							</tr>
+							<tr>
+								<td style="width: 50%;" id="luser">Voucher</td>
+								<td style="width: 50%;">
+									<input style="width: 100px;" name="username" type="text" value="$(username)"/>
+								</td>
+							</tr>
+							<tr>
+								<td id="lpass"></td>
+								<td>
+									<input style="width: 100px;" name="password" type="hidden" />
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<input type="submit" value="OK" />
+								</td>
+							</tr>
+						</table>
+					</div>
+					</form>
+				</td>
+			</tr>
+			
+			<tr><td align="center"><a href="http://www.mikrotik.com" target="_blank" style="border: none;"><img src="img/logobottom.png" alt="mikrotik" /></a></td></tr>
+		</table>
+	
+	<br /><div style="color: #c1c1c1; font-size: 9px">Powered by MikroTik RouterOS</div>
+	$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
+	</td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+<!--
+document.login.username.focus();
+
+// login page 2 mode by Laksamadi Guko
+var username = document.login.username;
+var password = document.login.password;
+var luser = document.getElementById("luser");
+var lpass = document.getElementById("lpass");
+var btnmem = document.getElementById("btnmem");
+var btnvcr = document.getElementById("btnvcr");
+
+// set password = username
+function setpass(){
+  var user = username.value		
+  password.value = user;
+}
+username.onchange = setpass;
+btnmem.style = "background-color:#FDFBFB; width: 90px; cursor:pointer;";
+btnvcr.style = "background-color:#f1f1f1; width: 90px; cursor:pointer;";  
+
+// change to voucher mode
+function voucher(){
+  username.focus();
+  username.onchange = setpass;
+  password.type = "hidden";
+  luser.innerHTML = "Voucher"; 
+  lpass.innerHTML = "";
+  btnmem.style = "background-color:#FDFBFB; width: 90px; cursor:pointer;";
+  btnvcr.style = "background-color:#f1f1f1; width: 90px; cursor:pointer;";  
+}
+
+// change to member mode
+function member(){
+  username.focus();
+  username.onchange = "";
+  password.type= "password";
+  luser.innerHTML = "Username"; 
+  lpass.innerHTML = "Password"; 
+  btnmem.style = "background-color:#f1f1f1; width: 90px; cursor:pointer;"; 
+  btnvcr.style = "background-color:#FDFBFB; width: 90px; cursor:pointer;"; 
+}
+//-->
+</script>
+</body>
+</html>
