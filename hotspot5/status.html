@@ -55,7 +55,7 @@ $(endif)
          <div class="box w-12 text-center"><h3>Selamat datang !</h3></div>
       $(elif login-by != 'mac')
         <div class="box w-12 text-center"><h3>Selamat datang</h3></div>
-        <div class="box w-12 text-center" id="user"><h3>$(username)</h3></div> 
+        <div class="box w-12 text-center"><h3 id="user">$(username)</h3></div> 
       $(endif) 
     <div style="padding:10px;"><a class="a" id="cek" href="./detail.html"></a></div>
     <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
