@@ -45,7 +45,7 @@ $(endif)
 >
 	<div class="container">
 		<div class="row mt-10">
-			<div class="col-6 mr-a" style="float:none; margin-top: 10%;">
+			<div class="col-4 mr-a" style="float:none; margin-top: 10%;">
 				<div class="row">
     				<div class="col-12">
     					<div class="card box-shadow">
@@ -60,7 +60,7 @@ $(endif)
     <div style="padding:10px;"><a class="a" id="cek" href="./detail.html"></a></div>
     <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
     
-      <table class="table table-bordered table-hover">
+      <table class="table table-bordered table-hover mr-b-10">
         <tr>
             <td align="right">IP</td>
             <td>$(ip)</td>
@@ -102,7 +102,6 @@ $(endif)
         $(endif)
         </table>
         $(if login-by-mac != 'yes')
-        <br>
         <button type="submit" class="btn-md w-12 bg-warning pd-5">Logout | Keluar</button>
         $(endif)
       
@@ -115,7 +114,7 @@ $(endif)
 </div>
 </div>
 <script type="text/javascript">
-	document.getElementById('title').innerHTML = window.location.hostname + " > Status";
+	document.getElementById('title').innerHTML = window.location.hostname + " > status";
 //get vaidity
     var usr = document.getElementById('user').innerHTML
     var url = "https://example.com/status/status.php?name="; // http://ip-server-mikhmon/mikhmonv2/status/status.php?name=

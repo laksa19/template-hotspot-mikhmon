@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>mikrotik hotspot > redirect</title>
+<title id="title"></title>
 <meta http-equiv="refresh" content="2; url=$(link-redirect)">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
@@ -8,26 +8,6 @@
 <meta http-equiv="expires" content="-1">
 <link rel="stylesheet" href="css/mikhmon-ui-light.css">
 <link rel="stylesheet" href="css/background.css">
-<style type="text/css">
-<!--
-textarea,input,select {
-	background-color: #FDFBFB;
-	border: 1px #BBBBBB solid;
-	padding: 2px;
-	margin: 1px;
-	font-size: 14px;
-	color: #808080;
-}
-
-body{ color: #737373; font-size: 12px; font-family: verdana; }
-
-a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
-a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
-img {border: none;}
-td { font-size: 12px; color: #7A7A7A; }
-
--->
-</style>
 <script language="JavaScript">
 <!--
     function startClock() {
@@ -43,10 +23,13 @@ td { font-size: 12px; color: #7A7A7A; }
 <table width="100%" height="100%">
 <tr>
 	<td align="center" valign="middle">
-	You are logged in
+	Anda sudah login.
 	<br><br>
-	If nothing happens, click <a href="$(link-redirect)">here</a></td>
+	Juka belum, klik <a class="text-primary" href="./login">di sini</a></td>
 </tr>
 </table>
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " > redirect";
+</script>
 </body>
 </html>

@@ -74,7 +74,7 @@
 				$(if error)<div class="alert bg-danger text-center mr-t-10">$(error)</div>$(endif)
 			</div>
 			<div class="card-footer bg-primary mr-t-10 text-center">
-				$(if trial == 'yes')Coba gratis <a class="text-danger" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik di sini</a>$(endif)
+				$(if trial == 'yes')Coba gratis klik <a class="text-danger" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">di sini</a>$(endif)
 			</div>
 		</div>
 	</div>
@@ -198,7 +198,7 @@
 <script type="text/javascript">
 <!--
 document.login.username.focus();
-document.getElementById('title').innerHTML = window.location.hostname + " > Login";
+document.getElementById('title').innerHTML = window.location.hostname + " > login";
 
 // login page 2 mode by Laksamadi Guko
 var username = document.login.username;
