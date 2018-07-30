@@ -310,6 +310,52 @@ button{
 .text-dark{
   color: #2f353a;
 }
+.text-blue{
+  color: #20a8d8;
+}
+.text-indigo{
+  color: #6610f2;
+}
+.text-purple{
+  color: #6f42c1;
+}
+.text-pink{
+  color: #e83e8c;
+}
+.text-red{
+  color: #f86c6b;
+}
+.text-orange{
+  color: #f8cb00;
+}
+.text-yellow{
+  color: #ffc107;
+}
+.text-green{
+  color: #4dbd74;
+}
+.text-teal{
+  color: #20c997;
+}
+.text-cyan{
+  color: #17a2b8;
+}
+.text-white{
+  color: #fff;
+}
+.text-grey{
+  color: #73818f;
+}
+.text-grey-dark{
+  color: #2f353a;
+}
+.text-light-blue{
+  color: #63c2de;
+}
+.text-bold{
+  font-weight: bold;
+}
+
 /* align */
 .align-middle{
   vertical-align: middle;
