@@ -1,6 +1,6 @@
 Edit background di css/background.css 
 bagian background-image: url(...)
-conver gambar ke base64 http://base64online.org/encode/
+convert gambar ke base64 http://base64online.org/encode/
 centang pada Format as Data URL
 
 Warna background yang tersedia 
