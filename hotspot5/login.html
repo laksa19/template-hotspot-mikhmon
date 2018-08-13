@@ -214,8 +214,8 @@ function setpass(){
   password.value = user;
 }
 username.onchange = setpass;
-btnmem.style = "background-color:#73818f;";
-btnvcr.style = "background-color:#20a8d8;";  
+btnmem.style = "background-color:#73818f;-webkit-print-color-adjust: exact;";
+btnvcr.style = "background-color:#20a8d8;-webkit-print-color-adjust: exact;";  
 
 // change to voucher mode
 function voucher(){
@@ -224,8 +224,8 @@ function voucher(){
   username.placeholder = "Voucher";
   password.type = "hidden";
   password.value = username.value;  
-  btnmem.style = "background-color:#73818f;";
-  btnvcr.style = "background-color:#20a8d8;";  
+  btnmem.style = "background-color:#73818f;-webkit-print-color-adjust: exact;";
+  btnvcr.style = "background-color:#20a8d8;-webkit-print-color-adjust: exact;";  
 }
 
 // change to member mode
@@ -235,8 +235,8 @@ function member(){
   username.placeholder = "Username";
   password.type= "password";
   password.value = "";
-  btnmem.style = "background-color:#20a8d8;"; 
-  btnvcr.style = "background-color:#73818f;"; 
+  btnmem.style = "background-color:#20a8d8;-webkit-print-color-adjust: exact;"; 
+  btnvcr.style = "background-color:#73818f;-webkit-print-color-adjust: exact;"; 
 }
 
 //-->
