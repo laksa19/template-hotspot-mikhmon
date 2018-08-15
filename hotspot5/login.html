@@ -55,11 +55,14 @@
 						<input type="hidden" name="dst" value="$(link-orig)" />
 						<input type="hidden" name="popup" value="true" />
 							<div class="row">
-								<div class="col-6 col-md-6"> 
+								<div class="col-4 col-md-4"> 
 								<div class="box mr-2 pointer text-center text-light" id="btnvcr" onclick="voucher()">Voucher</div>
 								</div>
-								<div class="col-6 col-md-6">
+								<div class="col-4 col-md-4">
 								<div class="box mr-2 pointer text-center text-light" id="btnmem" onclick="member()">Member</div>
+								</div>
+								<div class="col-4 col-md-4">
+								<div class="box mr-2 pointer text-center text-light bg-success" id="qr" onclick="window.location='https://laksa19.github.io/myqr';">QR</div>
 								</div>
 							</div>
 								<input class="form-control-md mr-t-10" name="username" type="text" value="$(username)" placeholder="Voucher" />
