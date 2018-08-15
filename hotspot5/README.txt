@@ -30,3 +30,9 @@ bg-white
 bg-grey
 bg-grey-dark
 bg-light-blue
+
+Untuk menggunakan fitur QR CODE SCANNER Anda perlu menambahkan script berikut di MikroTik via Terminal.
+
+/ip hotspot walled-garden ip
+
+add action=accept comment="Mikhmon QR Code Scanner" disabled=no dst-host=laksa19.github.io
