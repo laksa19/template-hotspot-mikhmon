@@ -4,7 +4,7 @@ convert gambar ke base64 http://base64online.org/encode/
 centang pada Format as Data URL
 
 Membuat login Member menjadi default
-Edit di baris 15 menjadi file login.html
+Edit file login.html di baris 15 menjadi
 <body class="background" onload="member()">
 
 Warna background yang tersedia 
