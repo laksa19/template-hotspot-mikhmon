@@ -17,14 +17,10 @@ input {
 }
 
 .plch-center::-webkit-input-placeholder {
-
    text-align: center;
-
 }
-
 .plch-center:-moz-placeholder {
    text-align: center;
-
 }
 
 /* button */
