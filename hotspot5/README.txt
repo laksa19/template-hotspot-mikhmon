@@ -8,6 +8,11 @@ Edit file login.html di baris 15 menjadi
 <body class="background" onload="member()">
 
 Warna background yang tersedia 
+
+Diletakkan di class element
+
+<div class="bg-dark"></div>
+
 bg-primary
 bg-secondary
 bg-success
