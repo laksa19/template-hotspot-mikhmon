@@ -15,6 +15,11 @@ Edit file login.html di baris 15 menjadi
 
 ## Warna background yang tersedia 
 
+Diletakkan di class element
+```
+<div class="bg-dark"></div>
+```
+
 ```
 bg-primary
 bg-secondary
