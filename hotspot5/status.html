@@ -118,7 +118,8 @@ $(endif)
 //get vaidity
     var usr = document.getElementById('user').innerHTML
     var url = "https://example.com/status/status.php?name="; // http://ip-server-mikhmon/mikhmonv2/status/status.php?name=
-    var getvalid = url+usr
+    var SessionName = "wifijoss"
+    var getvalid = url+usr+"&session="+SessionName
     document.getElementById('exp').src = getvalid;	
 </script>
 </body>
