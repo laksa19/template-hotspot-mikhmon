@@ -54,11 +54,13 @@
       <td align="right">Aktif</td>
       <td>$(uptime)</td>
     </tr>
-    $(if session-time-left)
+    $(if remain-bytes-total)
     <tr>
       <td align="right">Sisa Kuota</td>
       <td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-total)));</script></td>
     </tr>
+    $(endif)	  
+    $(if session-time-left)	  
     <tr>
       <td align="right">Sisa Waktu</td>
       <td>$(session-time-left)</td>
