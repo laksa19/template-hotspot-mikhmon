@@ -33,8 +33,10 @@
 <tr><td align="right">MAC</td><td>:</td><td>$(mac)</td></tr>
 <tr><td align="right">UL | DL</td><td>:</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
 <tr><td align="right">Aktif</td><td>:</td><td>$(uptime)</td></tr>
-$(if session-time-left)
+$(if remain-bytes-total)	
 <tr><td align="right">Sisa Kuota</td><td>:</td><td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-total)));</script></td></tr>
+$(endif)
+$(if session-time-left)	
 <tr><td align="right">Sisa Waktu</td><td>:</td><td>$(session-time-left)</td></tr>
 $(endif)
 </table>
