@@ -21,11 +21,6 @@
 	window.close();
 	return false;
     }
-    function readablizeBytes(bytes) {
-		var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
-		var e = Math.floor(Math.log(bytes)/Math.log(1024));
-		return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
-		}
 //-->
 </script>
 <center>
@@ -57,7 +52,7 @@
     $(if remain-bytes-total)
     <tr>
       <td align="right">Sisa Kuota</td>
-      <td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-total)));</script></td>
+      <td>$(remain-bytes-total-nice)</td>
     </tr>
     $(endif)	  
     $(if session-time-left)	  
