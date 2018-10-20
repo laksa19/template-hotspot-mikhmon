@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title id="title"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<center>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+
+
+
+<div class="main">
+<div class="box"><h3 class="brand">Kemangi 41</h3></div>
+<div class="box">
+    <button id="btnvrc" class="small-button" onclick="voucher();">Voucher</button>
+    <button id="btnmem" class="small-button" onclick="member();">Member</button>
+    <button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';">QR Code</button>
+</div>
+<div class="box" id="infologin" >
+</div>
+	<form autocomplete="off" name="login" action="$(link-login-only)" method="post"
+		$(if chap-id) onSubmit="return doLogin()" $(endif)>
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />	
+			<input class="username" name="username" type="text" value="$(username)"/>
+			<input class="password" name="password" placeholder="Password" type="hidden" />
+								
+			<input class="button" type="submit" value="Login" />
+
+	</form>
+
+  $(if trial == 'yes')
+    <div class="box">Coba gratis <a style="text-decoration: underline; color:#fff;" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik di sini</a></div>
+  $(endif)
+
+	$(if error)<div class="notice">$(error)</div>$(endif)
+
+<table class="table" >
+  <caption style="font-size: 16px; font-weight: bold;">Paket Internet Wifi</caption>
+    <tr>
+        <th>Paket</th>
+        <th>Aktif</th>
+        <th>Harga</th>
+    </tr>
+    <tr>
+        <td>6J</td>
+        <td>6 Jam</td>
+        <td>Rp 2.000</td>
+    </tr>
+    <tr>
+        <td>1H</td>
+        <td>24 Jam</td>
+        <td>Rp 3.000</td>
+    </tr>
+    <tr>
+        <td>2H</td>
+        <td>2 Hari</td>
+        <td>Rp 5.000</td>
+    </tr>
+    <tr>
+        <td>7H</td>
+        <td>7 Hari</td>
+        <td>Rp 15.000</td>
+    </tr>
+    <tr>
+        <td>30H</td>
+        <td>30 Hari</td>
+        <td>Rp 35.000</td>
+    </tr>
+</table>
+<br />
+<div>
+  Voucher bisa dibeli di gang Kluweh No.21 (Rosi) atau gang Kemangi No.41.
+</div>
+</div>
+<br />
+<div class="box" style="color:#000";>
+ <i>Copyright &copy; 2018 Laksamadi</i><br />
+<i>Powered by <a style="color:#000; text-decoration:underline;" href="https://laksa19.github.io">Mikhmon</a></i> <!-- Tolong jangan dihilangkan bagian ini-->
+</div>
+</center>
+<script type="text/javascript">
+<!--
+
+document.getElementById('title').innerHTML = window.location.hostname + " > login";
+
+document.login.username.focus();
+
+var infologin = document.getElementById('infologin');
+infologin.innerHTML  = "Masukkan Kode Voucher kemudian klik login.";
+
+// login page 2 mode by Laksamadi Guko
+var username = document.login.username;
+var password = document.login.password;
+
+username.placeholder = "Kode Voucher";
+
+
+function harga(){
+  harga.display = "none";
+}
+
+// set password = username
+function setpass(){
+  var user = username.value		
+  password.value = user;
+}
+
+username.onchange = setpass; 
+
+// change to voucher mode
+function voucher(){
+  username.focus();
+  username.onchange = setpass;
+  username.placeholder = "Kode Voucher";
+  username.style = "border-radius:3px;"
+  password.type = "hidden";
+  infologin.innerHTML  = "Masukkan Kode Voucher kemudian klik login.";
+}
+
+// change to member mode
+function member(){
+  username.focus();
+  username.onchange = "";
+  username.placeholder = "Username";
+  username.style = "border-radius:3px 3px 0px 0px;"
+  password.type= "password";
+  infologin.innerHTML  = "Masukkan Username dan Password kemudian klik login.";
+}
+//-->
+</script>
+</body>
+</html>

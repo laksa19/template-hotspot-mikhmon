@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title id="title"></title>
+$(if refresh-timeout)
+<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" href="style.css">
+<script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+</head>
+<body $(if advert-pending == 'yes')	onLoad="openAdvert()" $(endif) >
+<div class="main">
+<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+
+$(if login-by == 'trial')
+	<br><div style="text-align: center;">Welcome trial user!</div><br>
+$(elif login-by != 'mac')
+	<br><div style="text-align: center;">Welcome <b id="user">$(username)</b>!</div><br>
+$(endif)
+<table class="table2">
+	<tr><td align="right" style="width: 40%;">IP Address</td><td>$(ip)</td></tr>
+    <tr><td align="right">MAC Address</td><td>$(mac)</td></tr>
+	<tr><td align="right">UL / DL</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+	<tr><td align="right">Terkoneksi</td><td>$(uptime)</td></tr>
+$(if remain-bytes-total)
+    <tr><td align="right">Sisa Kuota</td><td>$(remain-bytes-total-nice)</td></tr>
+$(endif)
+$(if session-time-left)
+    <tr><td align="right">Sisa Waktu</td><td>$(session-time-left)</td></tr>
+$(endif)
+$(if blocked == 'yes')
+	<tr><td align="right">Status</td><td><div style="color: #FF8080">
+<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td></tr>
+$(elif refresh-timeout)
+	<tr><td align="right">Refresh</td><td>$(refresh-timeout)</td></tr>
+$(endif)
+    <tr><td align="right">Expired</td><td style="padding-top:0px; padding-left:2px;"><iframe id="exp" frameborder="0" scrolling="no" src="about:blank"></iframe></td></tr>
+
+</table>
+$(if login-by-mac != 'yes')
+<br>
+<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+<!-- end of user manager link -->
+<input class="button2" type="submit" value="Logout">
+$(endif)
+</form>
+</div>
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " > status";
+//get vaidity
+    var usr = document.getElementById('user').innerHTML
+    var url = "https://example.com/status/status.php?name="; // http://ip-server-mikhmon/mikhmonv2/status/status.php?name=
+    var SessionName = "wifijoss"
+    var getvalid = url+usr+"&session="+SessionName
+    document.getElementById('exp').src = getvalid;		
+</script>
+</body>
+</html>
