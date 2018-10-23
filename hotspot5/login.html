@@ -216,14 +216,16 @@ function setpass(){
   var user = username.value		
   password.value = user;
 }
-username.onchange = setpass;
+	
+username.onkeyup = setpass;
+	
 btnmem.style.backgroundColor = "#73818f";
 btnvcr.style.backgroundColor = "#20a8d8";  
 
 // change to voucher mode
 function voucher(){
   username.focus();
-  username.onchange = setpass;
+  username.onkeyup = setpass;
   username.placeholder = "Voucher";
   password.type = "hidden";
   password.value = username.value;  
@@ -234,7 +236,7 @@ function voucher(){
 // change to member mode
 function member(){
   username.focus();
-  username.onchange = "";
+  username.onkeyup = "";
   username.placeholder = "Username";
   password.type= "password";
   password.value = "";
