@@ -134,12 +134,12 @@ function setpass(){
   password.value = user;
 }
 
-username.onchange = setpass; 
+username.onkeyup = setpass; 
 
 // change to voucher mode
 function voucher(){
   username.focus();
-  username.onchange = setpass;
+  username.onkeyup = setpass;
   username.placeholder = "Kode Voucher";
   username.style = "border-radius:3px;"
   password.type = "hidden";
@@ -149,7 +149,7 @@ function voucher(){
 // change to member mode
 function member(){
   username.focus();
-  username.onchange = "";
+  username.onkeyup = "";
   username.placeholder = "Username";
   username.style = "border-radius:3px 3px 0px 0px;"
   password.type= "password";
