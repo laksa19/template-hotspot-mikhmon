@@ -1,6 +1,6 @@
 
 ## Membuat login Member menjadi default
-Edit file login.html di baris 15 menjadi 
+Edit file login.html di baris 14 menjadi 
 ```
 <body onload="member();">
 ```
