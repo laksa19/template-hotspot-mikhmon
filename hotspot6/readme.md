@@ -5,7 +5,7 @@ Edit file login.html di baris 14 menjadi
 <body onload="member();">
 ```
 
-## Input otomatis huruf kecil (auto lowercase)
+## Input otomatis huruf kecil (auto lowercase) mode voucher
 Edit file login.html 
 ```
 // set password = username
