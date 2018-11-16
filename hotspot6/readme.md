@@ -8,7 +8,7 @@ Edit file login.html di baris 14 menjadi
 ## Input otomatis huruf kecil (auto lowercase) mode voucher dan member
 Edit file login.html mulai baris 126 -> 153
 ```
-/ set password = username
+// set password = username
 function setpass(){
   var user = username.value		
   password.value = user;
