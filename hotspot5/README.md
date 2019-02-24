@@ -80,3 +80,4 @@ Untuk menggunakan fitur QR CODE SCANNER Anda perlu menambahkan script berikut di
 add action=accept comment="Mikhmon QR Code Scanner" disabled=no dst-host=laksa19.github.io
 
 ```
+Centang HTTP PAP di hotspot server profile.
