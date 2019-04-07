@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title id="title"></title>
@@ -7,12 +6,11 @@ $(if refresh-timeout)
 <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
 $(endif)
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="-1">
+<meta name="theme-color" content="#3B5998" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
 <link rel="stylesheet" href="style.css">
 <script language="JavaScript">
-<!--
+
 $(if advert-pending == 'yes')
     var popup = '';
     function focusAdvert() {
@@ -29,7 +27,7 @@ $(endif)
 	window.close();
 	return false;
     }
-//-->
+
 </script>
 </head>
 <body $(if advert-pending == 'yes')	onLoad="openAdvert()" $(endif) >
@@ -37,28 +35,29 @@ $(endif)
 <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
 
 $(if login-by == 'trial')
-	<br><div style="text-align: center;">Welcome trial user!</div><br>
+	<div style="margin-top:20px; text-align: center;"><h3>Welcome</h3><i style="font-size:50px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3>trial user</h3></div><br>
 $(elif login-by != 'mac')
-	<br><div style="text-align: center;">Welcome <b id="user">$(username)</b>!</div><br>
+	<div style="margin-top:20px; text-align: center;"><h3>Welcome</h3><i style="font-size:50px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3 id="user">$(username)</h3></div><br>
 $(endif)
 <table class="table2">
-	<tr><td align="right" style="width: 40%;">IP Address</td><td>$(ip)</td></tr>
-    <tr><td align="right">MAC Address</td><td>$(mac)</td></tr>
-	<tr><td align="right">UL / DL</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
-	<tr><td align="right">Terkoneksi</td><td>$(uptime)</td></tr>
+	<tr><td align="right" style="width: 40%;">IP Address <i class="icon icon-sitemap">&#xf0e8;</i> </td><td>$(ip)</td></tr>
+    <tr><td align="right">MAC Address <i class="icon icon-barcode">&#xe80a;</i> </td><td>$(mac)</td></tr>
+    <tr><td align="right">Upload <i class="icon icon-upload">&#xe808;</i> </td><td>$(bytes-in-nice)</td></tr>
+    <tr><td align="right">Download <i class="icon icon-download">&#xe809;</i> </td><td>$(bytes-out-nice)</td></tr>
+	<tr><td align="right">Terkoneksi <i class="icon icon-exchange">&#xf0ec;</i> </td><td>$(uptime)</td></tr>
 $(if remain-bytes-total)
-    <tr><td align="right">Sisa Kuota</td><td>$(remain-bytes-total-nice)</td></tr>
+    <tr><td align="right">Sisa Kuota <i class="icon icon-hourglass-2">&#xf252;</i> </td><td>$(remain-bytes-total-nice)</td></tr>
 $(endif)
 $(if session-time-left)
-    <tr><td align="right">Sisa Waktu</td><td>$(session-time-left)</td></tr>
+    <tr><td align="right">Sisa Waktu <i class="icon icon-clock">&#xe805;</i> </td><td>$(session-time-left)</td></tr>
 $(endif)
 $(if blocked == 'yes')
-	<tr><td align="right">Status</td><td><div style="color: #FF8080">
+	<tr><td align="right">Status <i class="icon icon-check">&#xe807;</i> </td><td><div style="color: #FF8080">
 <a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td></tr>
 $(elif refresh-timeout)
-	<tr><td align="right">Refresh</td><td>$(refresh-timeout)</td></tr>
+	<tr><td align="right">Refresh <i <i class="icon icon-arrows-cw">&#xe800;</i> </td><td>$(refresh-timeout)</td></tr>
 $(endif)
-    <tr><td align="right">Expired</td><td style="padding-top:0px; padding-left:2px;"><iframe id="exp" frameborder="0" scrolling="no" src="about:blank"></iframe></td></tr>
+    <tr><td align="right">Expired <i <i class="icon icon-calendar">&#xe806;</i> </td><td style="padding-top:0px; padding-left:2px;"><iframe id="exp" frameborder="0" scrolling="no" src="about:blank"></iframe></td></tr>
 
 </table>
 $(if login-by-mac != 'yes')
@@ -66,18 +65,20 @@ $(if login-by-mac != 'yes')
 <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
 <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
 <!-- end of user manager link -->
-<input class="button2" type="submit" value="Logout">
+<button class="button2" type="submit"><i class="icon icon-logout">&#xe804;</i> Logout</button>
 $(endif)
 </form>
 </div>
 <script type="text/javascript">
-	document.getElementById('title').innerHTML = window.location.hostname + " > status";
+    document.getElementById('title').innerHTML = window.location.hostname + " > status";
 //get vaidity
     var usr = document.getElementById('user').innerHTML
+    var url = "/status/status.php?name=";
     var url = "https://example.com/status/status.php?name="; // http://ip-server-mikhmon/mikhmonv2/status/status.php?name=
     var SessionName = "wifijoss"
     var getvalid = url+usr+"&session="+SessionName
-    document.getElementById('exp').src = getvalid;		
+    document.getElementById('exp').src = getvalid;
+        
 </script>
 </body>
 </html>
