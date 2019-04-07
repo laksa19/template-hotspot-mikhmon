@@ -6,7 +6,7 @@ Edit file login.html di baris 14 menjadi
 ```
 
 ## Input otomatis huruf kecil (auto lowercase) mode voucher dan member
-Edit file login.html mulai baris 126 -> 153
+Edit file login.html mulai baris 120 -> 148
 ```
 // set password = username
 function setpass(){
