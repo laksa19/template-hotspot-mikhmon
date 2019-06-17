@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="title"></title>
+<meta http-equiv="refresh" content="2; url=$(link-redirect)">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="theme-color" content="#1FA2FF" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<script language="JavaScript">
+
+    function startClock() {
+        $(if popup == 'true')
+        open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+	$(endif)
+	location.href = './success.html';
+    }
+
+</script>
+</head>
+<body onLoad="startClock()">
+<div class="main">  
+<table width="100%" height="100%">
+<tr>
+	<td align="center" valign="middle">
+	Anda telah terhubung
+	<br><br>
+	Juka belum, <a style="color:#000" href="./login">klik di sini</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " > redirect";
+</script>
+</body>
+</html>

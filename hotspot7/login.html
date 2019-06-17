@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title id="title"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="theme-color" content="#1FA2FF" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <div class="bg">
+    
+        $(if chap-id)
+        <form name="sendin" action="$(link-login-only)" method="post">
+            <input type="hidden" name="username" />
+            <input type="hidden" name="password" />
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+        </form>
+
+        <script type="text/javascript" src="md5.js"></script>
+        <script type="text/javascript">
+            function doLogin() {
+                document.sendin.username.value = document.login.username.value;
+                document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
+                    '$(chap-challenge)');
+                document.sendin.submit();
+                return false;
+            }
+        </script>
+        $(endif)
+          
+            <div id="main" class="main">
+            
+            <div class="box">
+                <img src="img/logo.png" alt="kemangi 41" style="border-radius: 5px; width:200px; height:auto;"/>
+            </div>
+            <div class="container">
+            <div class="box">
+                <button id="btnvrc" class="small-button" onclick="voucher();"><i class="icon icon-ticket">&#xe802;</i> Voucher</button>
+                <button id="btnmem" class="small-button" onclick="member();"><i class="icon icon-user-circle-o">&#xf2be;</i> Member</button>
+                <button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i> QR
+                    Code</button>
+            </div>
+            <div class="box" id="infologin"></div>
+
+            <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+                $(endif)>
+                <input type="hidden" name="dst" value="$(link-orig)" />
+                <input type="hidden" name="popup" value="true" />
+                <input class="username" name="username" type="text" value="$(username)" />
+                <input class="password" name="password" placeholder="Password" type="hidden" />
+                $(if error)<div class="notice">$(error)</div>$(endif)
+                <button class="button" type="submit"><i class="icon icon-login">&#xe803;</i> Login</button>
+
+            </form>
+
+            $(if trial == 'yes')
+            <div class="box">Coba gratis <a style="text-decoration: underline; color:#000;" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik
+                    di sini</a></div>
+            $(endif)
+                <br />
+            <div>
+                Voucher bisa dibeli di gang Kluweh No.21 (Rosi) atau gang Kemangi No.41.
+            </div>
+        </div>
+        </div>
+        <br />
+        <div class="box" style="color:#000;">
+            <i>Copyright &copy; 2019 Laksamadi Guko</i><br />
+            <i>Powered by <a id="mikhmon" style="color:#000; text-decoration:underline; display:block" href="https://laksa19.github.io">Mikhmon</a></i>
+            <!-- Tolong jangan dihilangkan bagian ini-->
+        </div>
+        </div>
+
+<script type="text/javascript">
+var hostname = window.location.hostname;
+document.getElementById('title').innerHTML = hostname  + " > login";
+
+document.login.username.focus();
+
+var config = {
+    loginvc : "Masukkan Kode Voucher kemudian klik login.",
+    loginup : "Masukkan Username dan Password <br> kemudian klik login.",
+    voucherCode : "Kode Voucher",
+    setLowercase : "false", // true or false
+    defaultMode : "voucher", // voucher or member
+
+}
+
+
+
+var _0xe3bb=["\x69\x6E\x66\x6F\x6C\x6F\x67\x69\x6E","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x6C\x6F\x67\x69\x6E\x76\x63","\x6D\x69\x6B\x68\x6D\x6F\x6E","\x75\x73\x65\x72\x6E\x61\x6D\x65","\x6C\x6F\x67\x69\x6E","\x70\x61\x73\x73\x77\x6F\x72\x64","\x70\x6C\x61\x63\x65\x68\x6F\x6C\x64\x65\x72","\x76\x6F\x75\x63\x68\x65\x72\x43\x6F\x64\x65","\x76\x61\x6C\x75\x65","\x73\x65\x74\x4C\x6F\x77\x65\x72\x63\x61\x73\x65","\x74\x72\x75\x65","\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65","\x6F\x6E\x6B\x65\x79\x75\x70","\x66\x6F\x63\x75\x73","\x74\x79\x70\x65","\x68\x69\x64\x64\x65\x6E","","\x55\x73\x65\x72\x6E\x61\x6D\x65","\x6C\x6F\x67\x69\x6E\x75\x70","\x64\x65\x66\x61\x75\x6C\x74\x4D\x6F\x64\x65","\x6D\x65\x6D\x62\x65\x72","\x6F\x6E\x6C\x6F\x61\x64","\x4D\x69\x6B\x68\x6D\x6F\x6E","\x4D\x49\x4B\x48\x4D\x4F\x4E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x3C\x68\x32\x20\x73\x74\x79\x6C\x65\x3D\x27\x63\x6F\x6C\x6F\x72\x3A\x72\x65\x64\x27\x3E\x4A\x61\x6E\x67\x61\x6E\x20\x61\x73\x61\x6C\x20\x65\x64\x69\x74\x20\x62\x6F\x73\x6B\x75\x2C\x3C\x62\x72\x3E\x62\x61\x63\x61\x20\x6C\x69\x73\x65\x6E\x73\x69\x6E\x79\x61\x20\x6C\x61\x67\x69\x21\x20\x3C\x2F\x68\x33\x3E\x3C\x2F\x63\x65\x6E\x74\x65\x72\x3E","\x77\x72\x69\x74\x65","\x5B\x69\x64\x5E\x3D","\x5D","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72\x41\x6C\x6C","\x6C\x65\x6E\x67\x74\x68","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x62\x6C\x6F\x63\x6B","\x63\x6F\x6C\x6F\x72","\x23\x30\x30\x30","\x79\x61\x72\x6B"];var infologin=document[_0xe3bb[1]](_0xe3bb[0]);infologin[_0xe3bb[2]]= config[_0xe3bb[3]];var mikhmon=document[_0xe3bb[1]](_0xe3bb[4])[_0xe3bb[2]];var username=document[_0xe3bb[6]][_0xe3bb[5]];var password=document[_0xe3bb[6]][_0xe3bb[7]];username[_0xe3bb[8]]= config[_0xe3bb[9]];function setpass(){var _0x346dx6=username[_0xe3bb[10]];if(config[_0xe3bb[11]]== _0xe3bb[12]){_0x346dx6= _0x346dx6[_0xe3bb[13]]()}}username[_0xe3bb[14]]= setpass;var yark=mikhmon;function voucher(){username[_0xe3bb[15]]();username[_0xe3bb[14]]= setpass;username[_0xe3bb[8]]= config[_0xe3bb[9]];password[_0xe3bb[16]]= _0xe3bb[17];infologin[_0xe3bb[2]]= config[_0xe3bb[3]]}function member(){username[_0xe3bb[15]]();username[_0xe3bb[14]]= _0xe3bb[18];username[_0xe3bb[8]]= _0xe3bb[19];password[_0xe3bb[16]]= _0xe3bb[7];infologin[_0xe3bb[2]]= config[_0xe3bb[20]]}if(config[_0xe3bb[21]]== _0xe3bb[22]){window[_0xe3bb[23]]= member()};if(yark== _0xe3bb[24]|| yark== _0xe3bb[4]|| yark== _0xe3bb[25]){}else {document[_0xe3bb[27]](_0xe3bb[26])};function Id(_0x346dxb){var _0x346dxc;var _0x346dxd=document[_0xe3bb[30]](_0xe3bb[28]+ _0x346dxb+ _0xe3bb[29]);if(_0x346dxd){for(_0x346dxc= 0;_0x346dxc< (_0x346dxd[_0xe3bb[31]]);_0x346dxc++){_0x346dxd[_0x346dxc][_0xe3bb[33]][_0xe3bb[32]]= _0xe3bb[34];_0x346dxd[_0x346dxc][_0xe3bb[33]][_0xe3bb[35]]= _0xe3bb[36]}}}Id(_0xe3bb[37])
+
+
+</script>
+
+</body>
+
+</html>
