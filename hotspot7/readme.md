@@ -6,7 +6,7 @@ var config = {
     loginvc : "Masukkan Kode Voucher kemudian klik login.",
     loginup : "Masukkan Username dan Password <br> kemudian klik login.",
     voucherCode : "Kode Voucher",
-    setLowercase : "false", // true or false
+    setCase : "uppercase", // lowercase, uppercase or false
     defaultMode : "voucher", // voucher or member
 
 }
