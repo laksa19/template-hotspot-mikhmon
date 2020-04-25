@@ -11,6 +11,7 @@ Template login hotspot Mikrotik, cocok dipasangkan dengan [Mikhmon](https://laks
 1. Daftar paket wifi disesuaikan di file (paket-wifi.csv) dengan text-editor.
 2. Logo dapat diganti dengan format (logo.png dan sponsor.png) ditaruh di folder img.
 3. Sesuaikan juga yang dirasa perluu disesuaikan (nama usaha alamat dll).
+
 #### hotspot3 & hotspot4
 1. Daftar paket wifi disesuaikan di file (paket-wifi.csv) dengan text-editor.
 2. Logo dapat diganti dengan format (logo.png dan sponsor.png) ditaruh di folder img.
