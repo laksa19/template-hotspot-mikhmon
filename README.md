@@ -27,5 +27,5 @@ Template login hotspot Mikrotik, cocok dipasangkan dengan [Mikhmon](https://laks
 
 5. Notifikasi Expired bereaksi terhadap limit uptime, untuk lebih mudah bisa menggunakan [MIKHMON](https://laksa19.github.io). Dengan user profile yang menggunakan Expired Mode "Remove/Remove+Record".
 
-#### hotspot5 -7
+#### hotspot5 - 7
 Untuk template hotspot5 - 7 silakan baca panduan di file readme.md.
