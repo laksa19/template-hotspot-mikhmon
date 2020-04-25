@@ -17,7 +17,7 @@ Template ini gratis, silahkan edit yang perlu disesuaikan. Jangan menghilangkan 
 3. Nama usaha, alamat, notifkasi expired dan lainnya di (data.js).
 
       Contoh : 
-      ```
+      ```json
       Tambahakan tag <br> untuk membuat baris baru.
       {"nama" : "Kemangi 41"} menjadi {"nama" : "Hotspot Murah"}
       {"notifikasi" : "Mohon maaf internet Telkom dalam perbaikan."} menjadi {"notifikasi" : ""}
