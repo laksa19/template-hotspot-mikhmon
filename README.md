@@ -1,9 +1,6 @@
 ### Template Hotspot Mikhmon
 Template login hotspot Mikrotik, cocok dipasangkan dengan [Mikhmon](https://laksa19.github.io)
 
-#### Download
-[Download Template](https://github.com/laksa19/template-hotspot-mikhmon/archive/master.zip)
-
 #### Lisensi
 >Template ini gratis, silahkan edit yang perlu disesuaikan. Jangan menghilangkan atau merubah bagian footer (Powered by Mikhmon)!
 ### Yang perlu disesuaikan
@@ -30,3 +27,7 @@ Template login hotspot Mikrotik, cocok dipasangkan dengan [Mikhmon](https://laks
 
 #### hotspot5 - 7
 Untuk template hotspot5 - 7 silakan baca panduan di file readme.md.
+
+
+#### Download
+[Download Template](https://github.com/laksa19/template-hotspot-mikhmon/archive/master.zip)
