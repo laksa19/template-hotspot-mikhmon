@@ -31,4 +31,4 @@ Untuk template hotspot5 - 7 silakan baca panduan di file readme.md.
 
 
 #### Download
-[![](./img/download.png) Download Template](https://github.com/laksa19/template-hotspot-mikhmon/archive/master.zip)
+[![](./assets/img/download.png) Download Template](https://github.com/laksa19/template-hotspot-mikhmon/archive/master.zip)
