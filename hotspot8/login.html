@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Primer Tiempo</title>
+    <style>
+    	/* Sticky footer styles
+			-------------------------------------------------- */
+			html {
+			  position: relative;
+			  min-height: 100%;
+			}
+			body {
+			  /* Margin bottom by footer height */
+			  background: url(img/fondo.jpg) no-repeat center center fixed;
+    		-webkit-background-size: cover;
+    		-moz-background-size: cover;
+    		-o-background-size: cover;
+    		background-size: cover;
+			  margin-bottom: 60px;
+			}
+			.footer {
+			  position: absolute;
+			  bottom: 0;
+			  width: 100%;
+			  /* Set the fixed height of the footer here */
+			  height: 60px;
+			  line-height: 60px; /* Vertically center the text there */
+			  /*background-color: #f5f5f5;*/
+			}
+
+
+			/* Custom page CSS
+			-------------------------------------------------- */
+			/* Not required for template or sticky footer method. */
+
+			body > .container {
+			  padding: 60px 15px 0;
+			}
+
+			.footer > .container {
+			  padding-right: 15px;
+			  padding-left: 15px;
+			}
+
+			code {
+			  font-size: 80%;
+			}
+			#entrar{
+				padding: 1% 13%;
+				text-transform: uppercase;
+			}
+    </style>
+  </head>
+  <body>
+  	$(if chap-id)
+		<form name="sendin" action="$(link-login-only)" method="post">
+			<input type="hidden" name="username" />
+			<input type="hidden" name="password" />
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
+		</form>
+		<script type="text/javascript" src="/md5.js"></script>
+		<script type="text/javascript">
+		<!--
+		    function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+			document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+			document.sendin.submit();
+			return false;
+		    }
+		//-->
+		</script>
+	$(endif)
+    <footer class="footer">
+      <div class="container text-center">
+      	<button type="button" class="btn btn-light btn-lg" id="entrar" data-toggle="modal" data-target="#entrarModal">Conectarse</button>
+      </div>
+    </footer>
+    <!-- Modal -->
+		<div class="modal fade" id="entrarModal" tabindex="-1" role="dialog" aria-labelledby="entrarModal" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="entrarModalLabel">Acceso a Internet</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	$(if trial == 'yes')
+		      	<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" class="btn btn-success btn-block">Internet Gratis</a>
+		      	<hr>
+		      	$(endif)
+		        <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif) class="login100-form validate-form">
+						  <div class="form-group">
+						    <label for="usuario">Usuario: </label>
+						    <input type="email" class="form-control" id="usuario" aria-describedby="emailHelp" placeholder="">
+						  </div>
+						  <div class="form-group">
+						    <label for="password">Contraseña</label>
+						    <input type="password" class="form-control" id="password" placeholder="">
+						  </div>
+						  <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+						</form>
+		      </div>
+		      <div class="modal-footer">
+		      </div>
+		    </div>
+		  </div>
+		</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
