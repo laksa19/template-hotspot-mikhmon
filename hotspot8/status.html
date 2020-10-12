@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+  <head>
+	<title>mikrotik hotspot > status</title>
+	$(if refresh-timeout)
+		<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+	$(endif)
+	<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<style>
+    /* Sticky footer styles
+		-------------------------------------------------- */
+		html {
+		  position: relative;
+		  min-height: 100%;
+		}
+		body {
+		  /* Margin bottom by footer height */
+		  background: url(img/fondo.jpg) no-repeat center center fixed;
+   		-webkit-background-size: cover;
+   		-moz-background-size: cover;
+   		-o-background-size: cover;
+   		background-size: cover;
+		  margin-bottom: 60px;
+		}
+		.footer {
+		  position: absolute;
+		  bottom: 0;
+		  width: 100%;
+		  /* Set the fixed height of the footer here */
+		  height: 60px;
+		  line-height: 60px; /* Vertically center the text there */
+		  /*background-color: #f5f5f5;*/
+		}
+		/* Custom page CSS
+		-------------------------------------------------- */
+		/* Not required for template or sticky footer method. */
+		body > .container {
+		  padding: 60px 15px 0;
+		}
+		.footer > .container {
+		  padding-right: 15px;
+		  padding-left: 15px;
+		}
+		code {
+		  font-size: 80%;
+		}
+		#entrar{
+			padding: 1% 13%;
+			text-transform: uppercase;
+		}
+		table tr td:nth-child(2) {
+    	text-align: right;
+  	}
+  </style>
+<script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+</head>
+<body
+$(if advert-pending == 'yes')
+	onLoad="openAdvert()"
+$(endif)
+>
+	<div class="container">
+		<div class="row">
+			$(if login-by == 'trial')
+				<h1 class="text-center">Bienvenido: <b>Usuario Gratuito</b></h1>
+			$(elif login-by != 'mac')
+			<h1 class="text-center">Bienvenido: <b>$(username)</b></h1>
+			$(endif)
+			<div class="col-md-6  offset-md-3">
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title text-center">Ha cerrado sesi&oacute;n</h5>
+				    <table class="table">
+				    	<tr>
+				    		<td>IP:</td>
+				    		<td>$(ip)</td>
+				    	</tr>
+				    	$(if session-time-left)
+				    	<tr>
+				    		<td>Tiempo conectado / restante</td>
+				    		<td>$(uptime) / $(session-time-left)</td>
+				    	</tr>
+				    	$(else)
+				    	<tr>
+				    		<td>Tiempo conectado</td>
+				    		<td>$(uptime)</td>
+				    	</tr>
+				    	$(endif)
+				    	$(if blocked == 'yes')
+				    	<tr>
+				    		<td align="right">status:</td>
+				    		<td><a href="$(link-advert)" target="hotspot_advert">Publicidad</a> requerida</td>
+				    	</tr>
+				    	$(elif refresh-timeout)
+				    	<tr>
+				    		<td align="right">Estado Actualización:</td>
+				    		<td>$(refresh-timeout)</td>
+				    	</tr>
+				    	$(endif)
+				    </table>
+				    <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+				  		$(if login-by-mac != 'yes')
+							<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+							<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+							<!-- end of user manager link -->
+							<button class="btn btn-block btn-success" type="submit">SALIR</button>
+							$(endif)
+						</form>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

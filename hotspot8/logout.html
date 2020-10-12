@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+  <head>
+	<title>Primer Tiempo</title>
+	<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<style>
+    /* Sticky footer styles
+		-------------------------------------------------- */
+		html {
+		  position: relative;
+		  min-height: 100%;
+		}
+		body {
+		  /* Margin bottom by footer height */
+		  background: url(img/fondo.jpg) no-repeat center center fixed;
+   		-webkit-background-size: cover;
+   		-moz-background-size: cover;
+   		-o-background-size: cover;
+   		background-size: cover;
+		  margin-bottom: 60px;
+		}
+		.footer {
+		  position: absolute;
+		  bottom: 0;
+		  width: 100%;
+		  /* Set the fixed height of the footer here */
+		  height: 60px;
+		  line-height: 60px; /* Vertically center the text there */
+		  /*background-color: #f5f5f5;*/
+		}
+		/* Custom page CSS
+		-------------------------------------------------- */
+		/* Not required for template or sticky footer method. */
+		body > .container {
+		  padding: 60px 15px 0;
+		}
+		.footer > .container {
+		  padding-right: 15px;
+		  padding-left: 15px;
+		}
+		code {
+		  font-size: 80%;
+		}
+		#entrar{
+			padding: 1% 13%;
+			text-transform: uppercase;
+		}
+		table tr td:nth-child(2) {
+    	text-align: right;
+  	}
+  </style>
+</head>
+
+<body>
+<script language="JavaScript">
+<!--
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+<div class="container">
+		<div class="row">
+			<div class="col-md-6  offset-md-3">
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title text-center">Ha cerrado sesi&oacute;n</h5>
+				    <table class="table">
+				    	<tr>
+				    		<td>Usuario</td>
+				    		<td>$(username)</td>
+				    	</tr>
+				    	<tr>
+				    		<td>IP:</td>
+				    		<td>$(ip)</td>
+				    	</tr>
+				    	<tr>
+				    		<td>MAC</td>
+				    		<td>$(mac)</td>
+				    	</tr>
+				    	<tr>
+				    		<td>Tiempo Conexi&oacute;n</td>
+				    		<td>$(uptime)</td>
+				    	</tr>
+				    	$(if session-time-left)
+				    	<tr>
+				    		<td>Tiempo restante</td>
+				    		<td>$(session-time-left)</td>
+				    	</tr>
+				    	$(endif)
+				    	<tr>
+				    		<td>Tráfico</td>
+				    		<td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+				    	</tr>
+				    </table>
+				    <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+				    	<button class="btn btn-block btn-success" type="submit">CONECTARSE</button>
+				  	</form>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</table>
+</body>
+</html>
